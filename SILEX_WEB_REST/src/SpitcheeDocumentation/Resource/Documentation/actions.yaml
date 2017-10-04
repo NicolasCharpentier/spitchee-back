@@ -63,6 +63,11 @@ actions:
               - Si type == 'ConferenceIdUnvalidFormat', le format n'est pas valide.
               - Si type == 'ConferenceIdUnavailable', l'id demandé n'est pas disponible.
             auth: conferencier
+            params:
+              json:
+                - name: conferenceId
+                  required: false
+                  description: Id optionnel de conférence. Ne peut contenir que des lettres et chiffres. Sera mis en majuscule et espaces supprimés par le serveur
             success:
               code: 201
               content:
