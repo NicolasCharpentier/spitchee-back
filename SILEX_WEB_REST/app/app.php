@@ -197,9 +197,9 @@ $app['twig'] = $app->share($app->extend('twig', function(Twig_Environment $twig,
 
     $twig->addFunction(new \Twig_SimpleFunction('asset', function ($asset) use ($app) {
         $url = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'];
-        if (true !== $app['debug']) {
-            $url .= '/web';
-        }
+        //if (true !== $app['debug']) {
+        //    $url .= '/web';
+        //}
         return sprintf("http://$url/%s", ltrim($asset, '/'));
     }));
 
