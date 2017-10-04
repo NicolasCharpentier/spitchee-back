@@ -9,6 +9,7 @@ use Spitchee\Util\Auth\SpitcheeAuthManager;
 use Spitchee\Util\Operation\OperationFailure;
 use Spitchee\Util\Operation\OperationResult;
 use Spitchee\Util\Operation\OperationSuccess;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
@@ -119,6 +120,11 @@ abstract class BaseController extends ContainerAwareService
         }
         
         return new Response($message, $code);
+    }
+
+    protected function jsonError($json, $code)
+    {
+        return new JsonResponse($json, $code);
     }
 
     protected function operationResult(OperationResult $op)

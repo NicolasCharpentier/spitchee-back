@@ -13,9 +13,17 @@ use Spitchee\Util\Operation\OperationSuccess;
 
 class ConferenceService extends BaseEntityService
 {
-    public function createActiveConference(User $confMaster, User $speaker, $save = true)
+    public function createActiveConference(User $confMaster, User $speaker, $wantedId, $save = true)
     {
-        $conf = new Conference($this->genSmallUuid(), $confMaster, $speaker);
+        $errorOnWantedId = $this->getErrorOnWantedId($wantedId);
+
+        if ($errorOnWantedId) {
+            return $errorOnWantedId;
+        }
+
+        $conferenceId = $wantedId ?: $this->generateConferneceId();
+
+        $conf = new Conference($conferenceId, $confMaster, $speaker);
 
         if ($save) {
             $this->persist($conf);
@@ -145,6 +153,70 @@ class ConferenceService extends BaseEntityService
             ->originate($conference, $sipAccount);
     }
 
+    /**
+     * @param $id
+     * @return array|null
+     */
+    private function getErrorOnWantedId($id)
+    {
+        if (! $this->conferenceIdIsInValidFormat($id)) {
+            return [
+                'type' => 'ConferenceIdUnvalidFormat',
+                'details' => 'Que des lettres et des chiffres PD'
+            ];
+        }
+
+        if (! $this->conferenceIdIsAvailable($id)) {
+            return [
+                'type' => 'ConferenceIdUnavailable',
+            ];
+        }
+
+        return null;
+    }
+
+    private function conferenceIdIsAvailable($id)
+    {
+        return  $this->getContainer()
+            ->getRepositoryService()
+            ->getConferenceRepository()
+            ->findOneBy(['uuid' => $id])
+            === null;
+    }
+
+    /**
+     * @param $id
+     * @return boolean
+     */
+    private function conferenceIdIsInValidFormat($id)
+    {
+        return ctype_alnum($id);
+    }
+
+    private function generateConferneceId()
+    {
+        $wordsList = file_get_contents(
+            __DIR__ . '/../../../../dico_50kmots_lenmax7.txt'
+        );
+
+        $words = explode(PHP_EOL, $wordsList);
+        $id = null;
+
+        $cpt = 0;
+        while ($id === null or (!$this->conferenceIdIsAvailable($id))) {
+            // Si on a test 250 fois on laisse béton
+            if ($cpt ++ == 250) {
+                return $this->genSmallUuid();
+            }
+
+            $maxIndex = count($words) - 1;
+            $choosenIndex = rand(0, $maxIndex);
+
+            $id = $words[$choosenIndex];
+        }
+
+        return $id;
+    }
 
     private function genSmallUuid() {
         $id = substr(Uuid::uuid4(), 0, 8);

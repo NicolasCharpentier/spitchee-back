@@ -43,10 +43,19 @@ class ConferenceController extends BaseController
     {
         $this->authRestrict(User::ROLE_CONFERENCIER);
 
+        // TODO bien dire dans doc le traitement que je fais
+        $wantedId   = $this->getPostArg('conferenceId', null);
+        $wantedId   = strtoupper($wantedId);
+        $wantedId   = str_replace(' ', '', $wantedId);
         $speaker    = $this->getUserService()->createTempUser(User::ROLE_HP, null, true, false);
         $conference = $this->getConferenceService()->createActiveConference(
-            $this->getUser(), $speaker
+            $this->getUser(), $speaker, $wantedId
         );
+
+        if (! ($conference instanceof Conference)) {
+            $error = $conference;
+            return $this->jsonError($error, 400);
+        }
 
         $sipSubscription = $this->getConferenceService()->registerUserToSipConference($speaker, $conference);
 

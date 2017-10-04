@@ -57,7 +57,11 @@ actions:
             url: /conference/active/create
             method: POST
             description: Créer une conférence
-            details: Engendre aussi la création du client speaker
+            details:
+              - Engendre aussi la création du client speaker.
+              - Retourne 400 en cas d'id de conférence non acceptable, avec un json contenant un champ 'type'.
+              - Si type == 'ConferenceIdUnvalidFormat', le format n'est pas valide.
+              - Si type == 'ConferenceIdUnavailable', l'id demandé n'est pas disponible.
             auth: conferencier
             success:
               code: 201
