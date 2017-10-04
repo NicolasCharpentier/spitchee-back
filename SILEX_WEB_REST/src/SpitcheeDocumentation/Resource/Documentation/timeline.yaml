@@ -1,0 +1,107 @@
+timeline:
+  - role: conferencier
+    id: user.tmpRegister
+    libelle: Je me register et récupère mes identifiants
+    type: http
+
+  - role: conferencier
+    id: createconf
+    libelle: Je crée la conférence, récupère son id et celui du speaker
+    type: http
+
+  - role: conferencier
+    id: Connection
+    libelle: Je m'y connecte
+    type: rabbit
+
+  - role: speaker
+    id: user.tmpSpeakerRegister
+    libelle: Je me register et recupère mes identifiants
+    type: http
+
+  - role: speaker
+    id: sipAuth
+    libelle: Je m'auth à Asterisk
+    type: sip
+
+  - role: conferencier
+    id: ConferenceState
+    libelle: Je recois que la conference est en attente de la réponse du speaker
+    type: rabbit
+
+  - role: speaker
+    id: sipGetCalled
+    libelle: Je recois un appel de conférence. Je ne réponds pas automatiquement car j'ai un bug
+    type: sip
+
+  - role: conferencier
+    id: CallDecline
+    libelle: Je suis informé qu'un appel a été refusé
+    type: rabbit
+
+  - role: conferencier
+    id: confCallStart
+    libelle: Nique, je vais lancer l'appel moi même
+    type: http
+
+  - role: speaker
+    libelle: Je recois un appel de conférence, j'arrive à répondre automatiquement
+    type: sip
+
+  - role: conferencier
+    id: ConferenceState
+    libelle: Je suis informé que la conférence est active. Je suis prêt à lancer des appels
+    type: rabbit
+
+  - role: agora
+    id: user.tmpRegister
+    libelle: Je me register et récupères mes identifiants
+    type: http
+
+  - role: agora
+    id: subscribe
+    libelle: Je m'inscris à la conférence grâce à son id
+    type: http
+
+  - role: agora
+    id: Connection
+    libelle: Je m'y connecte
+    type: rabbit
+
+  - role: agora
+    id: sipAuth
+    libelle: Je m'auth à Asterisk
+    type: sip
+
+  - role: agora
+    id: wannaTalkRegister
+    libelle: Je demande la parole
+    type: http
+
+  - role: conferencier agora
+    id: Asks
+    libelle: Je recois une update de la liste des demandes de parole
+    type: rabbit
+
+  - role: conferencier
+    id: confCallAgora
+    libelle: J'appele le seul mec qui a demandé parole
+    type: http
+
+  - role: agora
+    libelle: Je rep
+    type: sip
+
+  - role: conferencier agora
+    id: Asks
+    libelle: Je recois une update de la liste des demandes de parole
+    type: rabbit
+
+  - role: conferencier
+    id: confKick
+    libelle: Je le kick, il a une vieille voix
+    type: http
+
+  - role: agora
+    id: fdsaf
+    libelle: Je pète le seum

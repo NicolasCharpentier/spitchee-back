@@ -1,0 +1,47 @@
+rabbit:
+  lecturer:
+    - id: ConferenceState
+      description: Notifie un changement d'état de la conférence
+      values_or:
+        WAITING_FOR_SPEAKER: Le speaker est connecté en SIP, on l'a appelé et on attend qu'il décroche
+        ACTIVE: L'appel de conférence est en cours
+        INACTIVE: L'appel de conférence est terminé
+      ex:
+        state: ACTIVE
+
+
+    - id: CallDecline
+      description: L'user appellé n'a pas répondus. Cet envoyé est recu que ce soit un agora, ou le speaker, qui n'a pas rep
+      value: Une entité User
+
+    - id: OnCallNbUsers
+      description: Notifie un changement du nombre d'utilisateurs (SPEAKER NON INCLUS) dans l'appel.
+      deprecated: Remplacée par OnCallUsers
+      values:
+        nbUsers: Nombre d'users dans l'appel
+        way: +1 | -1. En gros si un mec vient de se faire kick/raccrocher (-1) ou vient de répondre (+1)
+        user: L'entité User du mec concerné
+
+    - id: OnCallUsers
+      description: Envoie les utilisateurs actuellement dans l'appel (SPEAKER NON INCLUS).
+      values:
+        lastChangeWay: +1 | -1. En gros si un mec vient de se faire kick/raccrocher (-1) ou de répondre (+1)
+        guiltyUser: L'user qui a provoqué le changement (qui est partit ou a rejoint l'appel)
+        users: Un array d'entités user actuellement dans l'appel
+
+    - id: Warning
+      description: Des warnings pouvant survenir (1 seul atm)
+      values_or:
+        SPEAKER_OFFLINE: Le speaker s'est déconnecté d'Asterisk
+      ex:
+        warning: SPEAKER_OFFLINE
+
+  public:
+    - id: Asks
+      description: Notifie un changement dans la liste des demandes de parole. C'est envoyé a agora et lecturer, comme ca si vous faites file d'attente, l'agora peut connaitre sa place dedans
+      value: Un array d'entités User ayant demandé la parole et pas encore consommé cette demande, trié de la plus ancienne demande à la plus récente
+
+
+
+
+

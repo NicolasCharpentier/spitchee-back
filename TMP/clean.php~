@@ -1,0 +1,12 @@
+<?php
+
+$file = '/etc/asterisk/sip.conf';
+$toDel = '#include "dynamic';
+
+$content = file_get_contents($file);
+$content = explode(PHP_EOL, $content);
+$content = array_filter($content, function ($elem) use ($toDel) {
+	 return strpos($elem, $toDel) === false;
+});
+
+file_put_contents($file, implode(PHP_EOL, $content));

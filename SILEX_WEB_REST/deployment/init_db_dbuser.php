@@ -1,0 +1,51 @@
+<?php
+
+// TODO : Modif pour get silex conf
+
+//$appPath = __DIR__ . '/../../SILEX_WEB_REST';
+$appPath = __DIR__ . '/../';
+
+require_once $appPath .  '/vendor/autoload.php';
+
+use Silex\Application;
+
+$app = new Application;
+$mode = trim(file_get_contents("$appPath/app/mode.casselescouilles"));
+$app->register(new DerAlex\Silex\YamlConfigServiceProvider("$appPath/app/parameters.$mode.yml"));
+
+$preLogin = 'root';
+$prePwd = 'root';
+$doctrineInstalled = ($argc == 2 and $argv[1] !== '0');
+
+$dbOpts = $app['config']['db'];
+$newLog = $dbOpts['user'];
+$newNam = $dbOpts['dbname'];
+$newPwd = $dbOpts['password'];
+
+$access = 'mysql -u' . $preLogin . ' -p' . $prePwd . ' -e ';
+
+shell_exec($access .
+    '"CREATE DATABASE ' . $newNam . '"'
+);
+
+shell_exec($access .
+    '"CREATE USER \'' . $newLog . '\'@\'%\' IDENTIFIED BY \'' . $newPwd . '\'"'
+);
+
+shell_exec($access .
+    '"GRANT ALL PRIVILEGES ON ' . $newNam . '.* TO \'' . $newLog . '\'@\'%\'"'
+);
+
+shell_exec($access .
+    '"FLUSH privileges"'
+);
+
+if ($doctrineInstalled) { // non car il s'attends à un cli-config depuis ici -____________________________________________________-
+    echo
+    shell_exec(
+        'php ' .  __DIR__ . '/../../' . 'vendor/bin/doctrine orm:schema-tool:create && ' .
+        'php ' .  __DIR__ . '/../../' . 'vendor/bin/doctrine orm:schema-tool:update --force'
+    );
+}
+
+echo 'Succès' . PHP_EOL;

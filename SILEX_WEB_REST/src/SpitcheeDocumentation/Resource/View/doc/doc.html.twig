@@ -1,0 +1,1101 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {# shallTroll ? 'Sexe Gay Noir' : 'Spitchee' #}
+        Spitchee
+    </title>
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/documentation.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/json-pretty-print.max.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/documentation-sidemenu.css') }}">
+    <style>
+        {% set corail = '#f5acbb' %}
+        {% set beautifulBlue = '#94a6ea' %}
+
+        {% set darkBeautifulBlue = '#7889c1' %}
+        {% set darkCorail = '#be889f' %}
+        {% set darkBeautifulGreen = '#4c966c' %}
+        {% set darkBeautifulGray  = '#8f9ba5' %}
+
+        {% set entrance = 'rollIn' %}
+
+        .testaaa {
+            color: #4c966c;
+        }
+
+        .dl-horizontal dt
+        {
+            white-space: normal;
+            width: 220px;
+        }
+
+        a {
+            cursor: pointer;
+            -webkit-transition: all 0.35s;
+            -moz-transition: all 0.35s;
+            transition: all 0.35s;
+            color: {{ beautifulBlue }}
+        }
+
+        a[disabled] {
+            cursor: default;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        hr.super-hr {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .light {
+            font-weight: 300;
+        }
+
+        .nav-li a.hovered, .nav-li a:hover {
+            //color: #C6CDFB !important;
+            color: {{ beautifulBlue }} !important;
+        }
+
+        .text-corail {
+            color: {{ corail }} !important;
+        }
+
+        .text-darkCorail {
+            color: {{ darkCorail }} !important;
+        }
+
+        .text-darkBeautifulGreen {
+            color: {{ darkBeautifulGreen }} !important;
+        }
+
+        .text-darkBeautifulGray {
+            color: {{ darkBeautifulGray }} !important;
+        }
+
+        .text-darkBeautifulBlue {
+            color: {{ darkBeautifulBlue }} !important;
+        }
+
+        .super-title {
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 300;
+        }
+
+        .super-title-copy {
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 300;
+        }
+
+        .super-title-corail {
+            color: {{ corail }}
+        }
+
+        .super-title-beautiful-blue {
+            color: {{ beautifulBlue }}
+        }
+
+        ul.ul-light li {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top" style="border-bottom: 2px solid {{ corail }}; background-color: #fff">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-1">
+                <ul class="nav navbar-nav">
+                    <li id="li-home" class="nav-li" style="font-size: 20px">
+                        <a onclick="scrollToPoint('home');" class="text-corail">
+                            SPITCHEE
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xs-11">
+                <ul class="nav navbar-nav">
+                    <li id="li-clients" class="nav-li">
+                        <a onclick="scrollToPoint('clients');"> Les clients </a>
+                    </li>
+                    <li id="li-user" class="nav-li">
+                        <a onclick="scrollToPoint('user');"> L'entité User </a>
+                    </li>
+                    <li id="li-conference" class="nav-li">
+                        <a onclick="scrollToPoint('conference');"> Une conférence chronologique </a>
+                    </li>
+                    <li id="li-routes" class="nav-li">
+                        <a onclick="scrollToPoint('routes');"> Les routes </a>
+                    </li>
+                    <li id="li-asterisk" class="nav-li">
+                        <a onclick="scrollToPoint('asterisk');"> Asterisk </a>
+                    </li>
+                    <li id="li-rabbit" class="nav-li">
+                        <a onclick="scrollToPoint('rabbit');"> Rabbit </a>
+                    </li>
+                    <li id="li-backlog" class="nav-li">
+                        <a onclick="scrollToPoint('backlog')"> Backlog </a>
+                    </li>
+                    <li id="li-changelog" class="nav-li">
+                        <a onclick="scrollToPoint('changelog')">
+                            Changelog jusqu'au {{ documentation.changelogs[0].date }}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<br/> <br/> <br/> <br/>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-9">
+            <div class="col-xs-12">
+                <div class="col-xs-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <h2 class="super-title light super-title-corail" id="point-home">
+                                DOCUMENTATION
+                            </h2>
+
+                            <div class="text-center">
+                                Dans l'ETNA c'est mort <br/>
+                                Les <a target="_blank" href="/asterisk/logs"> logs d'Asterisk </a><br/>
+                                Ce n'est <strong>jamais</strong> la faute du serveur <br/>
+                                L'authentification <a target="_blank" href="https://en.wikipedia.org/wiki/Basic_access_authentication"> Basic Auth </a><br/>
+                                Un midi au War, <a target="_blank" href="https://scontent-cdg2-1.xx.fbcdn.net/v/t1.0-9/11114240_10206457615538363_3187758187781286285_n.jpg?oh=2c90838854033188aa1dd1e67c954c08&oe=582BBE9E">
+                                    un Bar heureux
+                                </a>
+                            </div>
+
+                            <hr class="super-hr"/>
+
+                            <h3 class="super-title super-title-beautiful-blue" id="point-clients">
+                                LES DIFFÉRENTS CLIENTS
+                            </h3>
+
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th> lecturer </th>
+                                    <th> agora </th>
+                                    <th> speaker </th>
+                                </tr>
+                                </thead>
+                                <tbody style="font-size: 14">
+                                <tr>
+                                    <th>Définition</th>
+                                    <td> Maitre de conférence </td>
+                                    <td> Mec du publique </td>
+                                    <td> Haut-parleur, sur quoi le son sera transmis</td>
+                                </tr>
+                                <tr>
+                                    <th>Device</th>
+                                    <td>TOUS</td>
+                                    <td>TOUS</td>
+                                    <td>Desktop seulement</td>
+                                </tr>
+                                <tr>
+                                    <th>Utilisation du SIP ?</th>
+                                    <td>Non</td>
+                                    <td>Oui</td>
+                                    <td>Oui</td>
+                                </tr>
+                                <tr>
+                                    <th>Utilisation de Rabbit ?</th>
+                                    <td>Oui</td>
+                                    <td>Oui</td>
+                                    <td>Non</td>
+                                </tr>
+                                <tr>
+                                    <th>Type d'utilisateur</th>
+                                    <td>Permanent ou temporaire</td>
+                                    <td>Permanent ou temporaire</td>
+                                    <td>Temporaire</td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                            <hr class="super-hr"/>
+
+                            <h3 class="super-title super-title-corail" id="point-user">
+                                L'entité User et la sécurité
+                            </h3>
+
+                            <ul>
+                                <li>
+                                    Chaque client devra accéder à un compte utilisateur pour pouvoir faire partie de la conférence
+                                </li>
+                                <li>
+                                    Un utilisateur peut être permanent (donc inscrit au préalable) ou temporaire (créé pour la conférence et supprimé à la fin de celle-ci)
+                                </li>
+                                <li>
+                                    Un utilisateur <strong>permanent</strong> se connecte en <strong>basic-auth</strong> via son <strong>username</strong> et son <strong>mot de passe</strong>
+                                </li>
+                                <li>
+                                    Un utilisateur <strong>temporaire</strong> se connecte en <strong>basic-auth</strong> via son <strong>Id</strong> et son <strong>mot de passe</strong>
+                                </li>
+                                <li>
+                                    Un utilisateur possède des informations <strong>SIP</strong> uniquement quand il s'est inscrit à une conférence (le speaker est inscrit dans la conférence pendant sa création)
+                                </li>
+                                <li>
+                                    <strong>Quand une route vous renverra l'utilisateur, voilà comment vous le verrez</strong> (extrait d'un utilisateur temporaire)<br/>
+                                    <i>Que en temporaire, vous verrez un champ password</i><br/><br/>
+                                    <pre><code>{
+    "id": "36e5bcfe-3e7c-4e00-b91e-1207aae69a6c",
+    "role": "agora" | "lecturer" | "speaker",
+    "username": null | "george",
+    "conferenceId": "789914cf",
+    "wannaTalkSince": null | "31/01/2016 13:37:00",
+    "sip": // juste {}, si pas d'informations SIP
+    {
+        "status": 0, // 0 hors-ligne, 1 connecté, 3 en appel
+        "id": "1337",
+        "secret": "36e5bcfe-3e7c-4e00-b91e-1207aae69a6c"
+    },
+    "password": "17333caa-74ce-42c8-b3b6-7948935336d8"
+}</code></pre>
+                                </li>
+                            </ul>
+
+                            <hr class="super-hr"/>
+
+                            <h3 class="super-title super-title-beautiful-blue" id="point-conference">
+                                Conférence chronologique
+                            </h3>
+
+                            <i>Ceci n'est pas terminé</i> <br/>
+                            <i>Ceci est réalisé avec des utilisateurs temporaires</i> <br/>
+                            <i>La chronologie des actions pouvant différer elle ne peut être représentée, néanmoins celle-ci reste logique</i> <br/>
+                            <i>Le fait que y'ai des moments dans le tableau où on retrouve les headers ne signifie rien dans la conférence</i><br/>
+                            <i>Une vidéo de déscription du déroulement de conférence est dispo
+                                <a target="_blank" href="https://youtu.be/lZNaIIxRoD0">ici</a>
+                            </i>
+                            <br/>
+                            <br/>
+
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                <tr>
+                                    {% for role in documentation.roles %}
+                                        <th class="text-center"> {{ role }} </th>
+                                    {% endfor %}
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for action in documentation.timeline %}
+                                    {% if loop.index % 10 == 0 %}
+                                        <tr>
+                                            {% for role in documentation.roles %}
+                                                <th class="text-center"> {{ role }} </th>
+                                            {% endfor %}
+                                        </tr>
+                                    {% endif %}
+                                    {# set style = "sip"    == action.type ? 'info'   : '' #}
+                                    {% if action.type is defined %}
+                                        {% if action.type == 'sip' %}
+                                            {% set style = 'darkCorail' %}
+                                        {% elseif action.type == 'rabbit' %}
+                                            {% set style = 'darkBeautifulGreen' %}
+                                        {% else %} {# http default #}
+                                            {% set style = 'darkBeautifulBlue' %}
+                                        {% endif %}
+                                    {% else %}
+                                        {% set style = 'darkBeautifulGray' %}
+                                    {% endif %}
+
+                                    <tr>
+                                        {% for roleKey, roleName in documentation.roles %}
+                                            <td>
+                                                {% if roleKey in action.role %}
+                                                    {% set function = 'scrollToRoute' %}
+                                                    {% if action.type is defined and action.type == 'rabbit' %}
+                                                        {% set function = 'scrollToRabbit' %}
+                                                    {% endif %}
+
+                                                    <a onclick="{{ function }}('{{ action.id is defined ? action.id : '' }}')" class="text-{{ style }}">
+                                                        {% if action.type is defined %}
+                                                            <strong>{{ action.type|upper }} </strong>
+                                                        {% endif %}
+                                                        {{ action.libelle }}
+                                                    </a>
+                                                {% endif %}
+                                            </td>
+                                        {% endfor %}
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+
+                            <hr class="super-hr"/>
+
+                            <h3 class="super-title super-title-corail" id="point-routes">
+                                Les routes
+                            </h3>
+
+                            Seules les réponses de succès sont présentes dans la doc, lorsqu'il y aura une erreur, vous recevrez la plus part du temps une
+                            description du pourquoi de cette erreur (pas en json).
+                            <br/>
+                            Les codes de statut seront toujours respectés, donc lorsque vous recevrez un 200 ou un 201 (nb. votre callback de succès) vous serez
+                            sûr de voir le même type de réponse que celui fournit dans notre doc.
+                            <br/>
+                            Si aucune réponse n'est décrite, c'est qu'il n'y en a pas (en cas de succès)
+
+                            {% for routeCategorieKey, routeCategorie in documentation.actions.routeCategories %}
+                                <br/><br/>
+                                <h3 class="routes-title routes-categorie" id="h-{{ routeCategorieKey }}">
+                                    {{ routeCategorie.name }}
+                                </h3>
+                                {% for route in routeCategorie.routes %}
+                                    <br/>
+                                    <h3 id="route-{{ route.id }}" class="route-{{ routeCategorieKey }} routes-title">
+                                        <span class="doc-color-{{ route.method }}">
+                                            {{ route.method }}
+                                        </span>
+                                        {{ route.description }}
+                                    </h3>
+
+                                    <div class="doc-panel doc-panel-{{ route.method }}">
+                                        <h3 class="light">
+                                            <span class="light">
+                                                http://51.254.119.247/api{{ route.url }}
+                                            </span>
+
+                                            <a  rel="tooltip" data-toggle="tooltip" data-placement="top" data-container="body" data-html="true"
+                                                class="doc-color-{{ route.method }} wow {{ entrance }}"
+                                                title="{{ buildAuthRouteDescription(route.auth) }}"
+                                                style="float: right; font-size: 20px"
+                                            >
+                                                <i class="fa {{ route.auth != "none" ? 'fa-lock' : 'fa-unlock-alt' }}" aria-hidden="true"></i>
+                                                {{ buildAuthRouteResume(route.auth) }}
+                                            </a>
+                                        </h3>
+
+                                        <br/>
+
+                                        {% if route.details is defined %}
+                                            <p style="font-size: 16px; font-style: italic;">
+                                                <span class="glyphicon glyphicon-chevron-right doc-color-{{ route.method }}"></span>
+                                                {{ route.details }}
+                                            </p>
+                                        {% endif %}
+
+                                        <br/>
+
+                                        {% set params = {} %}
+                                        {% if route.params.url is defined %}
+                                            {% set params = params|merge({'url': route.params.url}) %}
+                                        {% endif %}
+                                        {% if route.params.json is defined %}
+                                            {% set params = params|merge({'json': route.params.json}) %}
+                                        {% endif %}
+
+                                        {% for paramType, args in params %}
+                                            {% if 'url' == paramType %}
+                                                <h4>
+                                                    Paramètres d'url
+                                                    <a rel="tooltip" data-toggle="tooltip" data-placement="top" data-container="body" data-html="true" class="doc-color-{{ route.method }} wow {{ entrance }}"
+                                                       title="
+                                                   Les paramètres requis sont directement dans l'url, comme pour '/user/{role}' qui pourrait devenir '/user/agora'
+                                                   <br/><br/>
+                                                   Les optionnels sont ajoutés à la fin, avec a, b et c optionnels on aurait
+                                                   <br/>
+                                                   '/user/agora?a=1&b=reg&c=0'
+                                                   ">
+                                                        <span class="fa fa-question-circle"></span>
+                                                    </a>
+                                                </h4>
+                                            {% else %}
+                                                <h4> Paramètres du json
+                                                    <a rel="tooltip" data-toggle="tooltip" data-placement="top" data-container="body" data-html="true" class="doc-color-{{ route.method }} wow {{ entrance }}"
+                                                       title="
+                                                        Les paramètres json sont envoyé dans le body de la requete. C'est juste un string représentant un objet JSON qui vous m'enverrez,
+                                                         vous possédez très surêment des classes pour vous mâcher le travail. Si vous avez du mal, le format 'form-data' est aussi accépté
+                                                       ">
+                                                        <span class="fa fa-question-circle"></span>
+                                                    </a>
+                                                </h4>
+                                            {% endif %}
+                                            <table class="table table-striped table-hover">
+                                                <thead>
+                                                <tr>
+                                                    <th> Nom </th>
+                                                    <th> Requis? </th>
+                                                    <th> Description </th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                {% for arg in args %}
+                                                    <tr>
+                                                        <td> {{ arg.name }} </td>
+                                                        <td> {{ arg.required ? 'Oui' : 'Non' }}</td>
+                                                        <td> {{ arg.description is defined ? arg.description : '' }} </td>
+                                                    </tr>
+                                                {% endfor %}
+                                                </tbody>
+                                            </table>
+                                            <br/>
+                                        {% endfor %}
+                                        <h4>
+                                            Réponse succès :
+                                            <span class="doc-color-{{ route.method }}"> {{ route.success.code }} </span>
+                                        </h4>
+                                        {% if route.success.details is defined and route.success.details %}
+                                            <p style="  font-size: 15px; font-style: italic; padding-left: 5px;
+                                                        margin-top: -5px; margin-bottom: 7px; font-weight: 200">
+                                                {{ route.success.details }}
+                                            </p>
+                                        {% endif %}
+                                        {% if route.success.content is defined and route.success.content %}
+                                            <div id="response-{{ route.id }}" style="max-width: 75%"></div>
+                                        {% endif %}
+                                    </div>
+                                {% endfor %}
+                            {% endfor %}
+
+
+                            <hr class="super-hr"/>
+                            <h3 class="super-title super-title-beautiful-blue" id="point-asterisk">
+                                todo asterisk
+                            </h3>
+                            <h3>
+                                < b r / >
+                                <br/>
+                                < b r / >
+                            </h3>
+
+                            <hr class="super-hr"/>
+                            <h3 class="super-title super-title-corail" id="point-rabbit">
+                                todo rabbit
+                            </h3>
+
+
+                            <ul class="ul-light">
+                                <li>
+                                    Rabbitmq c'est un software permettant l'utilisation du protocole de message  AMQP
+                                    (0.9.1 en ce qui nous concerne)
+                                </li>
+                                <li>
+                                    On va utiliser cette technologie pour que le serveur puisse notifier divers choses aux clients,
+                                    et que vous puissiez agir en conséquence <br/>
+                                </li>
+                                <li>
+                                    Vous n'avez pas besoin de gérer rabbit pour valider le reste, y'a moyen de tout faire
+                                    en dur selon des actions de l'utilisateurs, pour valider que le reste marche
+                                    car quand vous testez Rabbit vous informera de trucs que vous savez déjà
+                                    (le mec vient de se co, oui je sais c moi qui vient de le co etc.). <br/>
+                                    Néanmoins si vous avez déjà connection SIP, appel SIP, possibilité de POST, vous avez plus grand chose à valider
+                                </li>
+                                <li>
+                                    Le vigile me suit dans la magasin, il a raison... il me connait. Sinistre negro et sarazin, boule à zéro sous le bonnet
+                                </li>
+                                <li>
+                                    Certains messages auront des informations qui vous sembleront useless, et vous aurez raison. Certaines sont des détails
+                                    au cas où vous vouliez faire une action spécifique, selon vos envies quoi.
+                                </li>
+                                <li>
+                                    Les messages peuvent posséder ce qu'on appelle une routingKey, une clé de routage. <br/>
+                                    Elle est consistituée de keywords séparé par des points <br/>
+                                    C'est ce qu'on va utiliser pour identifier et catégoriser les messages. Voilà la syntaxe de la routingKey utilisée <br/>
+                                    <code>id_conference.categorie_accès.type_message</code> <br/>
+                                    <code>124egghf.lecturer.ConferenceState</code>
+                                </li>
+                                <li>
+                                    Vous l'aurez compris on aura, dans l'ordre
+                                    <ul>
+                                        <li> L'id de la conférence </li>
+                                        <li> La cible, <code>lecturer</code> ou <code>public</code> ( == lecturer + agoras)</li>
+                                        <li> Le type (description plus bas) </li>
+                                    </ul>
+                                </li>
+                                <li id="rabbit-Connection">
+                                    Vous devrez télécharger une librairie de client Rabbit et vous connectez à rabbit quand vous le devrez (cf. conférence chronologique) <br/>
+                                    Selon votre rôle, vous filtrerez les messages. <br/>
+                                    En tant que lecturer, vous devrez recevoir TOUS les messages, et en agora que les messages 'public'
+                                    <ul>
+                                        <li>
+                                            Filtre lecturer: <code>id_conference.*.*</code> ou <code>id_conference.#</code>
+                                        </li>
+                                        <li>
+                                            Filtre agora: <code>id_conference.public.*</code>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Vous allez devoir vous connecter aussi, alors voici la config que vous devrez utiliser
+                                    <ul>
+                                        <li>Host <code>51.254.119.247</code></li>
+                                        <li>Port <code>5672</code></li>
+                                        <li>User <code>spitcheer</code></li>
+                                        <li>Pass <code>BailandoElBaileDelBaljanito</code></li>
+                                    </ul> <br/>
+                                    Vous devrez consommer sur un exchange, celui-ci s'appelle <code>spitchee</code>
+                                </li>
+                                <li>
+                                    Bon courage :) Ca vous parle sûrement pas trop la dernière partie de ces explications, vous y verrez plus clair
+                                    quand vous aurez lu une doc d'utilisation de votre lib. Sinon n'hésitez pas à me demander des trucs
+                                </li>
+                                <li>
+                                    Aufait le body de tous les messages sera en json
+                                </li>
+                            </ul>
+                            <br/>
+
+                            <h3 class="light super-title-copy"> Description des types de messages </h3>
+
+                            {% for categorie, messages in documentation.rabbit %}
+                                <h4>Catégorie {{ categorie }}</h4>
+                                {% for message in messages %}
+                                    <span class="glyphicon glyphicon-chevron-right doc-color-PUT" id="rabbit-{{ message.id }}"></span>
+                                    Type <strong> {{ message.id }} </strong> : {{ message.description }}
+                                    {% if message.deprecated is defined %}
+                                        <span class="doc-color-PUT" style="margin-left: 19px;">
+                                            <br/> <span class="fa fa-exclamation-triangle"></span>
+                                            Ce message est déprécié et sera retiré dans une futur mise à jour
+                                        </span>
+                                    {% else %}
+                                        <br/>
+                                    {% endif %}
+                                    <br/>
+                                    <div style="margin-left: 19px;">
+                                        {% if message.values_or is defined %}
+                                            Valeurs (qu'une seule des {{ message.values_or|length }} possible) :
+                                            <dl class="dl-horizontal">
+                                                {% for value, valueDef in message.values_or %}
+                                                    <dt>{{ value }}&nbsp;&nbsp;</dt>
+                                                    <dd>{{ valueDef }}&nbsp;&nbsp;</dd>
+                                                {% endfor %}
+                                            </dl>
+                                        {% elseif message.value is defined %}
+                                            Valeur : {{ message.value }}
+                                        {% elseif message.values is defined %}
+                                            Un objet contenant ces informations :
+                                            <dl class="dl-horizontal">
+                                                {% for value, valueDef in message.values %}
+                                                    <dt>{{ value }}&nbsp;&nbsp;</dt>
+                                                    <dd>{{ valueDef }}&nbsp;&nbsp;</dd>
+                                                {% endfor %}
+                                            </dl>
+                                        {% endif %}
+
+                                        {% if message.ex is defined %}
+                                            Exemple du body d'un message de ce type :
+                                            <div id="rabbit-example-{{ message.id }}" style="max-width: 75%"></div>
+                                        {% endif %}
+                                    </div>
+                                    <br/><br/>
+                                {% endfor %}
+                                <br/><br/>
+                            {% endfor %}
+
+
+
+                            <hr class="super-hr"/>
+                            <h3 class="super-title super-title-beautiful-blue" id="point-backlog">
+                                Backlog
+                            </h3>
+
+                            <table class="table table-striped table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Du</th>
+                                    <th>Au</th>
+                                    <th>Points</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for log in documentation.backlog %}
+                                    <tr>
+                                        <td>{{ log.dateFrom }}</td>
+                                        <td>{{ log.dateTill }}</td>
+                                        <td>
+                                            <ul>
+                                                {% for point in log.points %}
+                                                    <li>{{ point }}</li>
+                                                {% endfor %}
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+
+
+                            <hr class="super-hr">
+                            <h3 class="super-title super-title-corail" id="point-changelog">
+                                Changements dans le back-office
+                            </h3>
+
+                            <ul>
+                                <li> BC signifie backward compatibilité break, donc que vous devrez ptet changer votre code pour vous adapter à un changement</li>
+                                <li> Le BC si présent sera décrit dans les changements qui seront préfixés d'un <span class="fa fa-exclamation-triangle" style="color: {{ corail }}"></span></li>
+                                <li> Chacun des 3 numéros de la version peut aller au-dela de 9 </li>
+                            </ul>
+
+                            <br/><br/>
+
+                            <table class="table table-striped table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Version</th>
+                                    <th>Nom</th>
+                                    <th>Date</th>
+                                    <th>Changements</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for log in documentation.changelogs %}
+                                    <tr>
+                                        <td> {{ log.version is defined ? log.version : '' }} </td>
+                                        <td> {{ log.name is defined ? log.name : '' }} </td>
+                                        <td> {{ log.date }} </td>
+                                        <td class="log-description">
+                                            {% if log.done|length > 1 %}
+                                                <ul>
+                                                    {% for changement in log.done %}
+                                                        <li>{{ changement }}</li>
+                                                    {% endfor %}
+                                                </ul>
+                                            {% else %}
+                                                {{ log.done[0] }}
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+
+
+                            <br/><br/><br/><br/><br/>
+                            <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                            <br/><br/><br/><br/><br/><br/><br/>
+                            <br/><br/><br/><br/><br/><br/><br/><br/>
+                            br land<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                            <br/><br/><br/><br/><br/><br/><br/><br/>
+                            <br/><br/><br/><br/><br/>
+                            <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                            <br/><br/><br/><br/><br/><br/><br/>
+                            <br/><br/><br/><br/><br/><br/><br/><br/>
+                            br land<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                            <br/><br/><br/><br/><br/><br/><br/><br/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-3"> <!---->
+            <div class="row">
+                <div class="col-xs-10" style="margin-left: -15px;">
+                    <div id="FDP-DE-CSS" style="position: fixed; width: inherit">
+                        <div class="panel panel-default" style="height: 500px;">
+                            <div class="panel-body" style="color: black;">
+                                <h4 style="text-align: center; color: {{ beautifulBlue }}" class="light">
+                                    SCROLL HISTORY 2016
+                                </h4>
+                                <div class="row">
+                                    <div class="col-xs-6 text-left">
+                                        <a id="btn-history-back" onclick="scrollBack();" style="font-size: 16px; color: {{ corail }}">
+                                            <span class="fa fa-chevron-left"></span>
+                                            <strong>PRECEDENT</strong>
+                                        </a>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <a id="btn-history-front" onclick="scrollFront();" style="font-size: 16px; color: {{ corail }}">
+                                            <strong>SUIVANT</strong>
+                                            <span class="fa fa-chevron-right"></span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <br/>
+
+                                <div id="sidebar-menu">
+                                    <ul class="main-menu nav nav-stacked affix-top">
+                                        {% for categorieKey, categorie in documentation.actions.routeCategories %}
+                                            <li id="sm-li-{{ categorieKey }}">
+                                                <a class="side-menu-a">{{ categorie.name }}</a>
+                                                <ul class="sub-menu">
+                                                    {% for route in categorie.routes %}
+                                                        <li id="sm-li-{{ categorieKey }}-{{ route.id }}">
+                                                            <a class="side-menu-a" onclick="scrollToRoute('{{ route.id }}')">{{ route.description }}</a>
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-2">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+<script src="{{ asset('js/jquery.min.js') }}"></script>
+<script src="{{ asset('js/angular.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/wow.min.js') }}"></script>
+<script src="{{ asset('js/json-pretty-print.max.js') }}"></script>
+
+<script type="application/javascript">
+
+    $(function () {
+        initEffect();
+        highLightLi('home');
+        $('[data-toggle="tooltip"]').tooltip();
+        initDocInteraction();
+        initScrollBtns();
+        new WOW().init();
+    });
+
+    var NAVBAR_OFFSET = 50;
+    var SCROLL_OFFSET = 35;
+
+    function scrollTo(wut, fast, dontRegister) {
+        var wantedPosition = 'number' === typeof wut ? wut : $('#' + wut).offset().top - NAVBAR_OFFSET - SCROLL_OFFSET;
+
+        if (true !== dontRegister) {
+            registerPositionInScrollHistory(true);
+        }
+
+        $('html, body').animate({
+            scrollTop: wantedPosition
+        }, true === fast ? 300 : 750);
+    }
+
+    function scrollToPoint(which) {
+        scrollTo('point-' + which);
+    }
+
+    function scrollToRabbit(which) {
+        scrollTo('rabbit-' + which);
+    }
+
+    function scrollToRoute(which) {
+        var length = which.split('.').length;
+        scrollTo('route-' + which.split('.')[length - 1]);
+    }
+
+    $(window).scroll(function() {
+        var top = $('body').offset().top;
+        var $titles = $('.super-title');
+        var $lastFoundTitle = $titles.first();
+
+        $titles.each(function() {
+            if ($(this).offset().top <= top + $(window).scrollTop() + NAVBAR_OFFSET + SCROLL_OFFSET)  {
+                //handleSideMenuHovering($('a[name="#' + $(this).attr('id') + '"]'));
+                $lastFoundTitle = $(this);
+            } else return false;
+        });
+
+        highLightLi($lastFoundTitle.attr('id').replace('point-', ''));
+
+        if ($lastFoundTitle.attr('id') === 'point-routes') {
+            var $route = null;
+
+            $('.routes-title').each(function () {
+                if ($(this).offset().top <= top + $(window).scrollTop() + NAVBAR_OFFSET + SCROLL_OFFSET)  {
+                    //handleSideMenuHovering($('a[name="#' + $(this).attr('id') + '"]'));
+                    $route = $(this);
+                } else return false;
+            });
+
+            if (null !== $route) {
+                var routeId = null;
+                var categId = null;
+                if (! $route.hasClass('routes-categorie')) {
+                    routeId = $route.attr('id').replace('route-', '');
+                    categId = $route.attr('class').replace(' routes-title', '').replace('route-', '');
+                } else {
+                    categId = $route.attr('id').replace('h-', '');
+                }
+
+                updateSideScrollMenu(routeId, categId);
+            }
+        } else {
+            disableSideScrollMenu();
+        }
+    });
+
+    function initEffect() {
+        var sideBar = $('#FDP-DE-CSS');
+        sideBar.css('width', sideBar.parent().css('width'));
+
+        $('body').addClass('animated zoomIn');
+        setTimeout(function () {
+            $('body').removeClass('animated zoomIn');
+        }, 1000);
+    }
+
+    var sideScrollMenuEnabled = true;
+
+    function disableSideScrollMenu() {
+        if (! sideScrollMenuEnabled) {
+            return;
+        }
+
+        var $smMenu = $('#sidebar-menu');
+
+        sideScrollMenuEnabled = false;
+
+        $smMenu.addClass('animated fadeOut');
+        setTimeout(function () {
+            if (! sideScrollMenuEnabled) {
+                $smMenu.hide();
+            }
+            $smMenu.removeClass('animated fadeOut');
+        }, 1000);
+        // todo class disabled comme l'atr disabled
+    }
+
+    function enableSideScrollMenu() {
+        if (sideScrollMenuEnabled) {
+            return;
+        }
+
+        var $smMenu = $('#sidebar-menu');
+
+        sideScrollMenuEnabled = true;
+
+        $smMenu.show();
+        $smMenu.addClass('animated fadeIn');
+        setTimeout(function () {
+            $smMenu.removeClass('animated fadeIn');
+        }, 1000);
+    }
+
+    function updateSideScrollMenu(routeId, categorieId) {
+        enableSideScrollMenu();
+
+        $('.side-menu-a').each(function () {
+            $(this).removeClass('hovered');
+        });
+
+        $('#sm-li-' + categorieId + ' a').first().addClass('hovered');
+        if (routeId) {
+            $('#sm-li-' + categorieId + '-' + routeId + ' a').first().addClass('hovered');
+        }
+    }
+
+    //
+    var scrollHistory = {
+        backward: [],
+        frontward: []
+    };
+
+    function registerPositionInScrollHistory(backward) {
+        var history = backward ? scrollHistory.backward : scrollHistory.frontward;
+
+        history.push($(window).scrollTop());
+        enableScrollBtn(backward);
+    }
+
+    function popScrollHistory(history, backward) {
+        var result = history.splice(-1, 1)[0];
+
+        if (! history.length) {
+            disableScrollBtn(backward);
+        }
+
+        return result;
+    }
+
+    function initScrollBtns() {
+        disableScrollBtn(true);
+        disableScrollBtn(false);
+    }
+
+    function disableScrollBtn(backward) {
+        $('#btn-history-' + (backward ? 'back' : 'front')).attr('disabled', 'disabled');
+    }
+
+    function enableScrollBtn(backward) {
+        $('#btn-history-' + (backward ? 'back' : 'front')).removeAttr('disabled');
+    }
+
+    function privateScroll(backward) {
+        var history = backward ? scrollHistory.backward : scrollHistory.frontward;
+
+        if (! history.length) {
+            return;
+        }
+
+        if (backward) {
+            registerPositionInScrollHistory(false);
+        }
+
+        scrollTo(popScrollHistory(history, backward), true, backward);
+    }
+
+    function scrollBack() {
+        privateScroll(true);
+    }
+
+    function scrollFront() {
+        privateScroll(false);
+    }
+
+    function debugHistory(msg) {
+        if (undefined !== msg) {
+            console.log(msg);
+        }
+        console.log('Back', scrollHistory.backward);
+        console.log('Front', scrollHistory.frontward);
+    }
+
+    //
+    function highLightLi(which) {
+        var $li = $('#li-' + which);
+        if ($li.hasClass('active-li')) {
+            return;
+        }
+
+        $('ul.navbar-nav li').each(function () {
+            $(this).removeClass('active-li');
+            $(this).find('a').first().removeClass('hovered');
+        });
+
+        /*
+        $li.addClass('animated zoomIn active-li');
+
+        setTimeout(function () {
+            $li.removeClass('animated zoomIn');
+        }, 1000);
+        */
+
+        $li.addClass('active-li');
+        $li.find('a').first().addClass('hovered');
+        if (which === 'home') {
+            $('nav.navbar').css('border-bottom', '2px solid {{ beautifulBlue }}');
+        } else {
+            $('nav.navbar').css('border-bottom', '2px solid {{ corail }}');
+        }
+    }
+
+    var routeCategories = JSON.parse(
+            String(/{{ documentation.actions.routeCategories|json_encode|raw }} /).substring(1).slice(0, -1)
+    );
+
+    var rabbitCategories = JSON.parse(
+            String(/{{ documentation.rabbit|json_encode|raw }} /).substring(1).slice(0, -1)
+    );
+
+    function initDocInteraction() {
+        $.each(routeCategories, function (categorieKey, categorie) {
+            $.each(categorie.routes, function (osef, route) {
+                initDocRouteInteraction(route);
+            });
+        });
+
+        $.each(rabbitCategories, function (categorieKey, messages) {
+            $.each(messages, function (osef, message) {
+                InitDocRabbitInteraction(message);
+            });
+        });
+
+        $('.log-description').each(function () {
+            $(this).find('li').each(function () {
+                var $li = $(this);
+                var content = $(this).text();
+
+                content = content.replace('_BC_',
+                        '<span style="color: {{ corail }}" class="fa fa-exclamation-triangle"> </span> '
+                );
+
+                var matches = content.match(/%.*?%/g);
+                if (matches !== null) {
+                    $.each(matches, function (osef, val) {
+                        var war = val.split('%')[1];
+                        content = content.replace(
+                                val, '<a onclick="scrollToRoute(\'' + war + '\')">' + war + '</a>'
+                        );
+                        //$li.html();
+                    });
+                }
+
+                $li.html(content);
+            });
+        });
+    }
+
+    function initDocRouteInteraction(route) {
+        if (undefined !== route.params && undefined !== route.params.url) {
+            initDocRouteUrlInteraction(route.id, route.url, route.params.url);
+        }
+        if (undefined !== route.success.content) {
+            initDocRouteResponseDisplay(route.id, route.success.content, route.method);
+        }
+    }
+
+    function initDocRouteUrlInteraction(routeId, routeUrl, urlParams) {
+        // flemme enfait, mais sinon mettre un bootstrap tooltip sur les args
+    }
+
+    function initDocRouteResponseDisplay(routeId, routeResponse, routeMethod) {
+        var shallPrettyPrint = true;
+
+        if (typeof routeResponse === 'string') {
+
+            if (-1 < routeResponse.indexOf('array__entity__')) {
+                routeResponse = getJPPEntity(routeResponse, true);
+            } else if (-1 < routeResponse.indexOf('entity__')) {
+                routeResponse = getJPPEntity(routeResponse);
+            } else {
+                shallPrettyPrint = false;
+            }
+        }
+
+        $('#response-' + routeId).append(
+                shallPrettyPrint ? jsonPrettyPrint(routeResponse).split('key').join('doc-color-' + routeMethod) :
+                        '<pre>' + routeResponse + '</pre>'
+        );
+    }
+
+    function InitDocRabbitInteraction(message) {
+        if (! message.ex) {
+            return;
+        }
+
+        $('#rabbit-example-' + message.id).append(jsonPrettyPrint(message.ex));
+    }
+
+</script>
+
+<script>
+    var entities = JSON.parse(
+        String(/ {{ documentation.entities|json_encode|raw }}/).substring(1).slice(0, -1)
+    );
+
+    function getJPPEntity(key, asArray) {
+        if (-1 < key.indexOf('User')) {
+            return asArray ? [entities.user] : entities.user;
+        }
+        if (-1 < key.indexOf('NamiEvent')) {
+            return asArray ? [entities.namiEvent] : entities.namiEvent;
+        }
+
+        throw new Error(key + ': key d\'entité inconnue');
+    }
+
+</script>

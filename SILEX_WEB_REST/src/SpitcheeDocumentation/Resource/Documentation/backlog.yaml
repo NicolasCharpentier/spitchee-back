@@ -1,0 +1,12 @@
+
+# à organiser du plus récent au plus vieux
+
+backlog:
+  - dateFrom: 08/07/2016
+    dateTill: 08+21/07/2016
+    points:
+      - Les clients peuvent s'appeler
+      - Améilloration de la doc
+      - Pouvoir appeler automatiquement sur Asterisk via NAMI
+      - Pouvoir virgule créer une conférence Asterisk via NAMI
+      - Utiliser les appels de NAMI sur le web-service Silex

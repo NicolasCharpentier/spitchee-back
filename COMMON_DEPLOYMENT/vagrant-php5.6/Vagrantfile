@@ -1,0 +1,25 @@
+
+Vagrant.configure(2) do |config|
+  config.vm.box = "deb/wheezy-amd64"
+  config.vm.box_url = "https://atlas.hashicorp.com/deb/boxes/wheezy-amd64"
+  config.vm.network "forwarded_port", guest: 80, host: 8000
+
+  config.vm.synced_folder  "../../SILEX_WEB_REST", "/var/www/SILEX_WEB_REST/",
+    owner: "vagrant",
+    group: "www-data",
+    mount_options: ["dmode=775,fmode=664"]
+
+  config.vm.synced_folder "../../ANGULAR_SPA", "/var/www/ANGULAR_SPA/",
+      owner: "vagrant",
+      group: "www-data",
+      mount_options: ["dmode=775,fmode=664"]
+
+  config.vm.synced_folder "../scripts", "/scripts/",
+       owner: "vagrant",
+       group: "www-data",
+       mount_options: ["dmode=775,fmode=664"]
+
+  config.vm.provision "shell", path: "../scripts/base_requirements.sh"
+  config.vm.provision "shell", path: "../scripts/install_full_lamp.sh"
+  config.vm.provision "shell", path: "../scripts/init_apache.php.sh"
+end

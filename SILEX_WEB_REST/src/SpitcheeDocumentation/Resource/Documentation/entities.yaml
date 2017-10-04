@@ -1,0 +1,22 @@
+entities:
+  user:
+    id: Integer
+    role: "String valant lecturer|agora|speaker"
+    username: "String"
+    password: "String (present que quand user temporaire)"
+    conferenceId: "String"
+    wannaTalkSince: "null | Date au format FR : d/m/Y H:i:s"
+    sip:
+      status: "Juste chiffre, 0:hors-ligne | 1:connecté | 3:en appel"
+      id: "String"
+      secret: "String"
+      ATTENTION: "Si pas d'infos sip, aucun de ces 3 fields ne sera la"
+
+  namiEvent:
+    id: Integer
+    sipId: Integer
+    userId: String
+    conferenceId: String
+    created: Date de création au format (FR) : d/m/Y H:i:s
+    type: Type de l'event en string
+    informations: Objet contenant la data de l'event

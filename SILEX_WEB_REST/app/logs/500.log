@@ -1,0 +1,802 @@
+[02/08/2016 13:55] Oops, An exception occurred while executing 'UPDATE Conference SET state = ? WHERE uuid = ?' with params [16, "02df6408"]:
+
+SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock; try restarting transaction
+#0 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php(116): Doctrine\DBAL\Driver\AbstractMySQLDriver->convertException('An exception oc...', Object(Doctrine\DBAL\Driver\PDOException))
+#1 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(996): Doctrine\DBAL\DBALException::driverExceptionDuringQuery(Object(Doctrine\DBAL\Driver\PDOMySql\Driver), Object(Doctrine\DBAL\Driver\PDOException), 'UPDATE Conferen...', Array)
+#2 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(480): Doctrine\DBAL\Connection->executeUpdate('UPDATE Conferen...', Array, Array)
+#3 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(366): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->updateTable(Object(DoctrineProxy\__CG__\Spitchee\Entity\Conference), 'Conference', Array, NULL)
+#4 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(1069): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->update(Object(DoctrineProxy\__CG__\Spitchee\Entity\Conference))
+#5 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(384): Doctrine\ORM\UnitOfWork->executeUpdates(Object(Doctrine\ORM\Mapping\ClassMetadata))
+#6 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/EntityManager.php(356): Doctrine\ORM\UnitOfWork->commit(NULL)
+#7 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Service/Generic/BaseEntityService.php(12): Doctrine\ORM\EntityManager->flush()
+#8 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Service/Entity/NamiEventService.php(26): Spitchee\Service\Generic\BaseEntityService->flush()
+#9 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Controller/NamiController.php(30): Spitchee\Service\Entity\NamiEventService->handleNewEvent(Array)
+#10 [internal function]: Spitchee\Controller\NamiController->registerEventAction(Object(Container))
+#11 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(144): call_user_func_array(Array, Array)
+#12 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(64): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#13 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(586): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#14 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(563): Silex\Application->handle(Object(Symfony\Component\HttpFoundation\Request))
+#15 /var/www-realspitchee/SILEX_WEB_REST/web/index.php(130): Silex\Application->run()
+#16 {main}
+
+[03/08/2016 16:11] Oops, An exception occurred while executing 'UPDATE SipAccount SET status = ? WHERE id = ?' with params [0, 1025]:
+
+SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock; try restarting transaction
+#0 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php(116): Doctrine\DBAL\Driver\AbstractMySQLDriver->convertException('An exception oc...', Object(Doctrine\DBAL\Driver\PDOException))
+#1 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(996): Doctrine\DBAL\DBALException::driverExceptionDuringQuery(Object(Doctrine\DBAL\Driver\PDOMySql\Driver), Object(Doctrine\DBAL\Driver\PDOException), 'UPDATE SipAccou...', Array)
+#2 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(480): Doctrine\DBAL\Connection->executeUpdate('UPDATE SipAccou...', Array, Array)
+#3 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(366): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->updateTable(Object(Spitchee\Entity\SipAccount), 'SipAccount', Array, NULL)
+#4 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(1069): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->update(Object(Spitchee\Entity\SipAccount))
+#5 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(384): Doctrine\ORM\UnitOfWork->executeUpdates(Object(Doctrine\ORM\Mapping\ClassMetadata))
+#6 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/EntityManager.php(356): Doctrine\ORM\UnitOfWork->commit(NULL)
+#7 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Service/Generic/BaseEntityService.php(12): Doctrine\ORM\EntityManager->flush()
+#8 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Service/Entity/NamiEventService.php(26): Spitchee\Service\Generic\BaseEntityService->flush()
+#9 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Controller/NamiController.php(30): Spitchee\Service\Entity\NamiEventService->handleNewEvent(Array)
+#10 [internal function]: Spitchee\Controller\NamiController->registerEventAction(Object(Container))
+#11 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(144): call_user_func_array(Array, Array)
+#12 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(64): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#13 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(586): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#14 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(563): Silex\Application->handle(Object(Symfony\Component\HttpFoundation\Request))
+#15 /var/www-realspitchee/SILEX_WEB_REST/web/index.php(130): Silex\Application->run()
+#16 {main}
+
+[05/08/2016 12:22] Oops, Warning: array_merge(): Argument #2 is not an array
+#0 [internal function]: Symfony\Component\Debug\ErrorHandler->handleError(2, 'array_merge(): ...', '/var/www-realsp...', 170, Array)
+#1 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Controller/BaseController.php(170): array_merge(Array, 'TOTO')
+#2 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Controller/BaseController.php(161): Spitchee\Controller\BaseController->parsePostArgs('username')
+#3 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Controller/UserController.php(62): Spitchee\Controller\BaseController->getPostArg('username')
+#4 [internal function]: Spitchee\Controller\UserController->tempRegisterAction('agora')
+#5 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(144): call_user_func_array(Array, Array)
+#6 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(64): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#7 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(586): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#8 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(563): Silex\Application->handle(Object(Symfony\Component\HttpFoundation\Request))
+#9 /var/www-realspitchee/SILEX_WEB_REST/web/index.php(130): Silex\Application->run()
+#10 {main}
+
+[05/08/2016 12:28] Oops, Warning: array_merge(): Argument #2 is not an array
+#0 [internal function]: Symfony\Component\Debug\ErrorHandler->handleError(2, 'array_merge(): ...', '/var/www-realsp...', 170, Array)
+#1 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Controller/BaseController.php(170): array_merge(Array, 'TOTO')
+#2 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Controller/BaseController.php(161): Spitchee\Controller\BaseController->parsePostArgs('username')
+#3 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Controller/UserController.php(62): Spitchee\Controller\BaseController->getPostArg('username')
+#4 [internal function]: Spitchee\Controller\UserController->tempRegisterAction('agora')
+#5 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(144): call_user_func_array(Array, Array)
+#6 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(64): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#7 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(586): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#8 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(563): Silex\Application->handle(Object(Symfony\Component\HttpFoundation\Request))
+#9 /var/www-realspitchee/SILEX_WEB_REST/web/index.php(130): Silex\Application->run()
+#10 {main}
+
+[05/08/2016 12:28] Oops, Warning: array_merge(): Argument #2 is not an array
+#0 [internal function]: Symfony\Component\Debug\ErrorHandler->handleError(2, 'array_merge(): ...', '/var/www-realsp...', 170, Array)
+#1 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Controller/BaseController.php(170): array_merge(Array, 'TOTO')
+#2 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Controller/BaseController.php(161): Spitchee\Controller\BaseController->parsePostArgs('username')
+#3 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Controller/UserController.php(62): Spitchee\Controller\BaseController->getPostArg('username')
+#4 [internal function]: Spitchee\Controller\UserController->tempRegisterAction('agora')
+#5 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(144): call_user_func_array(Array, Array)
+#6 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(64): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#7 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(586): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#8 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(563): Silex\Application->handle(Object(Symfony\Component\HttpFoundation\Request))
+#9 /var/www-realspitchee/SILEX_WEB_REST/web/index.php(130): Silex\Application->run()
+#10 {main}
+
+[05/08/2016 12:30] Oops, Warning: array_merge(): Argument #2 is not an array
+#0 [internal function]: Symfony\Component\Debug\ErrorHandler->handleError(2, 'array_merge(): ...', '/var/www-realsp...', 170, Array)
+#1 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Controller/BaseController.php(170): array_merge(Array, 'toto')
+#2 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Controller/BaseController.php(161): Spitchee\Controller\BaseController->parsePostArgs('username')
+#3 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Controller/UserController.php(62): Spitchee\Controller\BaseController->getPostArg('username')
+#4 [internal function]: Spitchee\Controller\UserController->tempRegisterAction('agora')
+#5 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(144): call_user_func_array(Array, Array)
+#6 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(64): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#7 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(586): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#8 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(563): Silex\Application->handle(Object(Symfony\Component\HttpFoundation\Request))
+#9 /var/www-realspitchee/SILEX_WEB_REST/web/index.php(130): Silex\Application->run()
+#10 {main}
+
+[13/08/2016 14:02] Oops, Invalid Host "51.254.119.247"
+#0 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1045): Symfony\Component\HttpFoundation\Request->getHost()
+#1 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1075): Symfony\Component\HttpFoundation\Request->getHttpHost()
+#2 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1713): Symfony\Component\HttpFoundation\Request->getSchemeAndHttpHost()
+#3 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1059): Symfony\Component\HttpFoundation\Request->prepareRequestUri()
+#4 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1765): Symfony\Component\HttpFoundation\Request->getRequestUri()
+#5 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(937): Symfony\Component\HttpFoundation\Request->prepareBaseUrl()
+#6 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1831): Symfony\Component\HttpFoundation\Request->getBaseUrl()
+#7 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(897): Symfony\Component\HttpFoundation\Request->preparePathInfo()
+#8 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/EventListener/FragmentListener.php(60): Symfony\Component\HttpFoundation\Request->getPathInfo()
+#9 [internal function]: Symfony\Component\HttpKernel\EventListener\FragmentListener->onKernelRequest(Object(Symfony\Component\HttpKernel\Event\GetResponseEvent), 'kernel.request', Object(Symfony\Component\EventDispatcher\EventDispatcher))
+#10 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/event-dispatcher/EventDispatcher.php(184): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\GetResponseEvent), 'kernel.request', Object(Symfony\Component\EventDispatcher\EventDispatcher))
+#11 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/event-dispatcher/EventDispatcher.php(46): Symfony\Component\EventDispatcher\EventDispatcher->doDispatch(Array, 'kernel.request', Object(Symfony\Component\HttpKernel\Event\GetResponseEvent))
+#12 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(125): Symfony\Component\EventDispatcher\EventDispatcher->dispatch('kernel.request', Object(Symfony\Component\HttpKernel\Event\GetResponseEvent))
+#13 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(64): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#14 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(586): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#15 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(563): Silex\Application->handle(Object(Symfony\Component\HttpFoundation\Request))
+#16 /var/www-realspitchee/SILEX_WEB_REST/web/index.php(130): Silex\Application->run()
+#17 {main}
+
+[29/08/2016 11:52] Oops, An exception occurred while executing 'INSERT INTO NamiEvent (type, information, created, related_sip_account_id, related_conference_id) VALUES (?, ?, ?, ?, ?)' with params ["OriginateResponse", "{\"variables\":[],\"event\":\"OriginateResponse\",\"privilege\":\"call,all\",\"actionid\":\"1334\",\"response\":\"Success\",\"channel\":\"SIP\\\/9747-00000224\",\"context\":\"\",\"exten\":\"\",\"reason\":\"4\",\"uniqueid\":\"1472464343.726\",\"calleridnum\":\"<unknown>\",\"calleridname\":\"Metisse's king\"}", "2016-08-29 11:52:29", 9747, "13309054"]:
+
+SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock; try restarting transaction
+#0 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php(116): Doctrine\DBAL\Driver\AbstractMySQLDriver->convertException('An exception oc...', Object(Doctrine\DBAL\Driver\PDOException))
+#1 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/dbal/lib/Doctrine/DBAL/Statement.php(175): Doctrine\DBAL\DBALException::driverExceptionDuringQuery(Object(Doctrine\DBAL\Driver\PDOMySql\Driver), Object(Doctrine\DBAL\Driver\PDOException), 'INSERT INTO Nam...', Array)
+#2 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(281): Doctrine\DBAL\Statement->execute()
+#3 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(1018): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->executeInserts()
+#4 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(378): Doctrine\ORM\UnitOfWork->executeInserts(Object(Doctrine\ORM\Mapping\ClassMetadata))
+#5 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/EntityManager.php(356): Doctrine\ORM\UnitOfWork->commit(NULL)
+#6 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Service/Generic/BaseEntityService.php(12): Doctrine\ORM\EntityManager->flush()
+#7 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Service/Entity/NamiEventService.php(26): Spitchee\Service\Generic\BaseEntityService->flush()
+#8 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Controller/NamiController.php(30): Spitchee\Service\Entity\NamiEventService->handleNewEvent(Array)
+#9 [internal function]: Spitchee\Controller\NamiController->registerEventAction(Object(Container))
+#10 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(144): call_user_func_array(Array, Array)
+#11 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(64): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#12 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(586): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#13 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(563): Silex\Application->handle(Object(Symfony\Component\HttpFoundation\Request))
+#14 /var/www-realspitchee/SILEX_WEB_REST/web/index.php(130): Silex\Application->run()
+#15 {main}
+
+[16/11/2016 20:41] Oops, An exception occurred while executing 'UPDATE SipAccount SET status = ? WHERE id = ?' with params [1, 5217]:
+
+SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock; try restarting transaction
+#0 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php(116): Doctrine\DBAL\Driver\AbstractMySQLDriver->convertException('An exception oc...', Object(Doctrine\DBAL\Driver\PDOException))
+#1 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(996): Doctrine\DBAL\DBALException::driverExceptionDuringQuery(Object(Doctrine\DBAL\Driver\PDOMySql\Driver), Object(Doctrine\DBAL\Driver\PDOException), 'UPDATE SipAccou...', Array)
+#2 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(480): Doctrine\DBAL\Connection->executeUpdate('UPDATE SipAccou...', Array, Array)
+#3 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(366): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->updateTable(Object(Spitchee\Entity\SipAccount), 'SipAccount', Array, NULL)
+#4 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(1069): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->update(Object(Spitchee\Entity\SipAccount))
+#5 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(384): Doctrine\ORM\UnitOfWork->executeUpdates(Object(Doctrine\ORM\Mapping\ClassMetadata))
+#6 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/EntityManager.php(356): Doctrine\ORM\UnitOfWork->commit(NULL)
+#7 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Service/Generic/BaseEntityService.php(13): Doctrine\ORM\EntityManager->flush()
+#8 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Service/Entity/NamiEventService.php(26): Spitchee\Service\Generic\BaseEntityService->flush()
+#9 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Controller/NamiController.php(30): Spitchee\Service\Entity\NamiEventService->handleNewEvent(Array)
+#10 [internal function]: Spitchee\Controller\NamiController->registerEventAction(Object(Container))
+#11 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(144): call_user_func_array(Array, Array)
+#12 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(64): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#13 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(586): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#14 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(563): Silex\Application->handle(Object(Symfony\Component\HttpFoundation\Request))
+#15 /var/www-realspitchee/SILEX_WEB_REST/web/index.php(145): Silex\Application->run()
+#16 {main}
+
+[26/11/2016 02:25] Oops, Invalid Host "51.254.119.247%0d"
+#0 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1045): Symfony\Component\HttpFoundation\Request->getHost()
+#1 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1075): Symfony\Component\HttpFoundation\Request->getHttpHost()
+#2 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1713): Symfony\Component\HttpFoundation\Request->getSchemeAndHttpHost()
+#3 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1059): Symfony\Component\HttpFoundation\Request->prepareRequestUri()
+#4 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1765): Symfony\Component\HttpFoundation\Request->getRequestUri()
+#5 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(937): Symfony\Component\HttpFoundation\Request->prepareBaseUrl()
+#6 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1831): Symfony\Component\HttpFoundation\Request->getBaseUrl()
+#7 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(897): Symfony\Component\HttpFoundation\Request->preparePathInfo()
+#8 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/EventListener/FragmentListener.php(60): Symfony\Component\HttpFoundation\Request->getPathInfo()
+#9 [internal function]: Symfony\Component\HttpKernel\EventListener\FragmentListener->onKernelRequest(Object(Symfony\Component\HttpKernel\Event\GetResponseEvent), 'kernel.request', Object(Symfony\Component\EventDispatcher\EventDispatcher))
+#10 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/event-dispatcher/EventDispatcher.php(184): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\GetResponseEvent), 'kernel.request', Object(Symfony\Component\EventDispatcher\EventDispatcher))
+#11 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/event-dispatcher/EventDispatcher.php(46): Symfony\Component\EventDispatcher\EventDispatcher->doDispatch(Array, 'kernel.request', Object(Symfony\Component\HttpKernel\Event\GetResponseEvent))
+#12 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(125): Symfony\Component\EventDispatcher\EventDispatcher->dispatch('kernel.request', Object(Symfony\Component\HttpKernel\Event\GetResponseEvent))
+#13 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(64): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#14 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(586): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#15 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(563): Silex\Application->handle(Object(Symfony\Component\HttpFoundation\Request))
+#16 /var/www-realspitchee/SILEX_WEB_REST/web/index.php(145): Silex\Application->run()
+#17 {main}
+
+[26/11/2016 06:07] Oops, Invalid Host "51.254.119.247%0d"
+#0 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1045): Symfony\Component\HttpFoundation\Request->getHost()
+#1 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1075): Symfony\Component\HttpFoundation\Request->getHttpHost()
+#2 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1713): Symfony\Component\HttpFoundation\Request->getSchemeAndHttpHost()
+#3 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1059): Symfony\Component\HttpFoundation\Request->prepareRequestUri()
+#4 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1765): Symfony\Component\HttpFoundation\Request->getRequestUri()
+#5 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(937): Symfony\Component\HttpFoundation\Request->prepareBaseUrl()
+#6 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1831): Symfony\Component\HttpFoundation\Request->getBaseUrl()
+#7 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(897): Symfony\Component\HttpFoundation\Request->preparePathInfo()
+#8 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/EventListener/FragmentListener.php(60): Symfony\Component\HttpFoundation\Request->getPathInfo()
+#9 [internal function]: Symfony\Component\HttpKernel\EventListener\FragmentListener->onKernelRequest(Object(Symfony\Component\HttpKernel\Event\GetResponseEvent), 'kernel.request', Object(Symfony\Component\EventDispatcher\EventDispatcher))
+#10 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/event-dispatcher/EventDispatcher.php(184): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\GetResponseEvent), 'kernel.request', Object(Symfony\Component\EventDispatcher\EventDispatcher))
+#11 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/event-dispatcher/EventDispatcher.php(46): Symfony\Component\EventDispatcher\EventDispatcher->doDispatch(Array, 'kernel.request', Object(Symfony\Component\HttpKernel\Event\GetResponseEvent))
+#12 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(125): Symfony\Component\EventDispatcher\EventDispatcher->dispatch('kernel.request', Object(Symfony\Component\HttpKernel\Event\GetResponseEvent))
+#13 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(64): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#14 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(586): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#15 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(563): Silex\Application->handle(Object(Symfony\Component\HttpFoundation\Request))
+#16 /var/www-realspitchee/SILEX_WEB_REST/web/index.php(145): Silex\Application->run()
+#17 {main}
+
+[26/11/2016 06:09] Oops, Invalid Host "51.254.119.247%0d"
+#0 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1045): Symfony\Component\HttpFoundation\Request->getHost()
+#1 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1075): Symfony\Component\HttpFoundation\Request->getHttpHost()
+#2 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1713): Symfony\Component\HttpFoundation\Request->getSchemeAndHttpHost()
+#3 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1059): Symfony\Component\HttpFoundation\Request->prepareRequestUri()
+#4 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1765): Symfony\Component\HttpFoundation\Request->getRequestUri()
+#5 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(937): Symfony\Component\HttpFoundation\Request->prepareBaseUrl()
+#6 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1831): Symfony\Component\HttpFoundation\Request->getBaseUrl()
+#7 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(897): Symfony\Component\HttpFoundation\Request->preparePathInfo()
+#8 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/EventListener/FragmentListener.php(60): Symfony\Component\HttpFoundation\Request->getPathInfo()
+#9 [internal function]: Symfony\Component\HttpKernel\EventListener\FragmentListener->onKernelRequest(Object(Symfony\Component\HttpKernel\Event\GetResponseEvent), 'kernel.request', Object(Symfony\Component\EventDispatcher\EventDispatcher))
+#10 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/event-dispatcher/EventDispatcher.php(184): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\GetResponseEvent), 'kernel.request', Object(Symfony\Component\EventDispatcher\EventDispatcher))
+#11 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/event-dispatcher/EventDispatcher.php(46): Symfony\Component\EventDispatcher\EventDispatcher->doDispatch(Array, 'kernel.request', Object(Symfony\Component\HttpKernel\Event\GetResponseEvent))
+#12 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(125): Symfony\Component\EventDispatcher\EventDispatcher->dispatch('kernel.request', Object(Symfony\Component\HttpKernel\Event\GetResponseEvent))
+#13 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(64): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#14 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(586): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#15 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(563): Silex\Application->handle(Object(Symfony\Component\HttpFoundation\Request))
+#16 /var/www-realspitchee/SILEX_WEB_REST/web/index.php(145): Silex\Application->run()
+#17 {main}
+
+[27/11/2016 03:57] Oops, An exception occurred while executing 'UPDATE Conference SET state = ? WHERE uuid = ?' with params [16, "ea15ae76"]:
+
+SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock; try restarting transaction
+#0 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php(116): Doctrine\DBAL\Driver\AbstractMySQLDriver->convertException('An exception oc...', Object(Doctrine\DBAL\Driver\PDOException))
+#1 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(996): Doctrine\DBAL\DBALException::driverExceptionDuringQuery(Object(Doctrine\DBAL\Driver\PDOMySql\Driver), Object(Doctrine\DBAL\Driver\PDOException), 'UPDATE Conferen...', Array)
+#2 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(480): Doctrine\DBAL\Connection->executeUpdate('UPDATE Conferen...', Array, Array)
+#3 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(366): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->updateTable(Object(DoctrineProxy\__CG__\Spitchee\Entity\Conference), 'Conference', Array, NULL)
+#4 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(1069): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->update(Object(DoctrineProxy\__CG__\Spitchee\Entity\Conference))
+#5 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(384): Doctrine\ORM\UnitOfWork->executeUpdates(Object(Doctrine\ORM\Mapping\ClassMetadata))
+#6 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/EntityManager.php(356): Doctrine\ORM\UnitOfWork->commit(NULL)
+#7 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Service/Generic/BaseEntityService.php(13): Doctrine\ORM\EntityManager->flush()
+#8 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Service/Entity/NamiEventService.php(26): Spitchee\Service\Generic\BaseEntityService->flush()
+#9 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Controller/NamiController.php(30): Spitchee\Service\Entity\NamiEventService->handleNewEvent(Array)
+#10 [internal function]: Spitchee\Controller\NamiController->registerEventAction(Object(Container))
+#11 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(144): call_user_func_array(Array, Array)
+#12 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(64): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#13 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(586): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#14 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(563): Silex\Application->handle(Object(Symfony\Component\HttpFoundation\Request))
+#15 /var/www-realspitchee/SILEX_WEB_REST/web/index.php(145): Silex\Application->run()
+#16 {main}
+
+[27/11/2016 06:35] Oops, An exception occurred while executing 'UPDATE SipAccount SET status = ? WHERE id = ?' with params [1, 5455]:
+
+SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock; try restarting transaction
+#0 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php(116): Doctrine\DBAL\Driver\AbstractMySQLDriver->convertException('An exception oc...', Object(Doctrine\DBAL\Driver\PDOException))
+#1 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(996): Doctrine\DBAL\DBALException::driverExceptionDuringQuery(Object(Doctrine\DBAL\Driver\PDOMySql\Driver), Object(Doctrine\DBAL\Driver\PDOException), 'UPDATE SipAccou...', Array)
+#2 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(480): Doctrine\DBAL\Connection->executeUpdate('UPDATE SipAccou...', Array, Array)
+#3 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(366): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->updateTable(Object(Spitchee\Entity\SipAccount), 'SipAccount', Array, NULL)
+#4 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(1069): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->update(Object(Spitchee\Entity\SipAccount))
+#5 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(384): Doctrine\ORM\UnitOfWork->executeUpdates(Object(Doctrine\ORM\Mapping\ClassMetadata))
+#6 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/EntityManager.php(356): Doctrine\ORM\UnitOfWork->commit(NULL)
+#7 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Service/Generic/BaseEntityService.php(13): Doctrine\ORM\EntityManager->flush()
+#8 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Service/Entity/NamiEventService.php(26): Spitchee\Service\Generic\BaseEntityService->flush()
+#9 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Controller/NamiController.php(30): Spitchee\Service\Entity\NamiEventService->handleNewEvent(Array)
+#10 [internal function]: Spitchee\Controller\NamiController->registerEventAction(Object(Container))
+#11 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(144): call_user_func_array(Array, Array)
+#12 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(64): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#13 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(586): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#14 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(563): Silex\Application->handle(Object(Symfony\Component\HttpFoundation\Request))
+#15 /var/www-realspitchee/SILEX_WEB_REST/web/index.php(145): Silex\Application->run()
+#16 {main}
+
+[03/12/2016 23:29] Oops, Invalid Host "51.254.119.247%0d"
+#0 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1045): Symfony\Component\HttpFoundation\Request->getHost()
+#1 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1075): Symfony\Component\HttpFoundation\Request->getHttpHost()
+#2 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1713): Symfony\Component\HttpFoundation\Request->getSchemeAndHttpHost()
+#3 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1059): Symfony\Component\HttpFoundation\Request->prepareRequestUri()
+#4 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1765): Symfony\Component\HttpFoundation\Request->getRequestUri()
+#5 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(937): Symfony\Component\HttpFoundation\Request->prepareBaseUrl()
+#6 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1831): Symfony\Component\HttpFoundation\Request->getBaseUrl()
+#7 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(897): Symfony\Component\HttpFoundation\Request->preparePathInfo()
+#8 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/EventListener/FragmentListener.php(60): Symfony\Component\HttpFoundation\Request->getPathInfo()
+#9 [internal function]: Symfony\Component\HttpKernel\EventListener\FragmentListener->onKernelRequest(Object(Symfony\Component\HttpKernel\Event\GetResponseEvent), 'kernel.request', Object(Symfony\Component\EventDispatcher\EventDispatcher))
+#10 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/event-dispatcher/EventDispatcher.php(184): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\GetResponseEvent), 'kernel.request', Object(Symfony\Component\EventDispatcher\EventDispatcher))
+#11 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/event-dispatcher/EventDispatcher.php(46): Symfony\Component\EventDispatcher\EventDispatcher->doDispatch(Array, 'kernel.request', Object(Symfony\Component\HttpKernel\Event\GetResponseEvent))
+#12 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(125): Symfony\Component\EventDispatcher\EventDispatcher->dispatch('kernel.request', Object(Symfony\Component\HttpKernel\Event\GetResponseEvent))
+#13 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(64): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#14 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(586): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#15 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(563): Silex\Application->handle(Object(Symfony\Component\HttpFoundation\Request))
+#16 /var/www-realspitchee/SILEX_WEB_REST/web/index.php(145): Silex\Application->run()
+#17 {main}
+
+[12/12/2016 11:52] Oops, An exception occurred while executing 'UPDATE SipAccount SET status = ? WHERE id = ?' with params [1, 1073]:
+
+SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock; try restarting transaction
+#0 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php(116): Doctrine\DBAL\Driver\AbstractMySQLDriver->convertException('An exception oc...', Object(Doctrine\DBAL\Driver\PDOException))
+#1 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(996): Doctrine\DBAL\DBALException::driverExceptionDuringQuery(Object(Doctrine\DBAL\Driver\PDOMySql\Driver), Object(Doctrine\DBAL\Driver\PDOException), 'UPDATE SipAccou...', Array)
+#2 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(480): Doctrine\DBAL\Connection->executeUpdate('UPDATE SipAccou...', Array, Array)
+#3 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(366): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->updateTable(Object(Spitchee\Entity\SipAccount), 'SipAccount', Array, NULL)
+#4 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(1069): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->update(Object(Spitchee\Entity\SipAccount))
+#5 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(384): Doctrine\ORM\UnitOfWork->executeUpdates(Object(Doctrine\ORM\Mapping\ClassMetadata))
+#6 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/EntityManager.php(356): Doctrine\ORM\UnitOfWork->commit(NULL)
+#7 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Service/Generic/BaseEntityService.php(13): Doctrine\ORM\EntityManager->flush()
+#8 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Service/Entity/NamiEventService.php(26): Spitchee\Service\Generic\BaseEntityService->flush()
+#9 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Controller/NamiController.php(30): Spitchee\Service\Entity\NamiEventService->handleNewEvent(Array)
+#10 [internal function]: Spitchee\Controller\NamiController->registerEventAction(Object(Container))
+#11 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(144): call_user_func_array(Array, Array)
+#12 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(64): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#13 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(586): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#14 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(563): Silex\Application->handle(Object(Symfony\Component\HttpFoundation\Request))
+#15 /var/www-realspitchee/SILEX_WEB_REST/web/index.php(145): Silex\Application->run()
+#16 {main}
+
+[12/12/2016 12:02] Oops, An exception occurred while executing 'UPDATE SipAccount SET status = ? WHERE id = ?' with params [1, 7628]:
+
+SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock; try restarting transaction
+#0 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php(116): Doctrine\DBAL\Driver\AbstractMySQLDriver->convertException('An exception oc...', Object(Doctrine\DBAL\Driver\PDOException))
+#1 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(996): Doctrine\DBAL\DBALException::driverExceptionDuringQuery(Object(Doctrine\DBAL\Driver\PDOMySql\Driver), Object(Doctrine\DBAL\Driver\PDOException), 'UPDATE SipAccou...', Array)
+#2 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(480): Doctrine\DBAL\Connection->executeUpdate('UPDATE SipAccou...', Array, Array)
+#3 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(366): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->updateTable(Object(Spitchee\Entity\SipAccount), 'SipAccount', Array, NULL)
+#4 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(1069): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->update(Object(Spitchee\Entity\SipAccount))
+#5 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(384): Doctrine\ORM\UnitOfWork->executeUpdates(Object(Doctrine\ORM\Mapping\ClassMetadata))
+#6 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/EntityManager.php(356): Doctrine\ORM\UnitOfWork->commit(NULL)
+#7 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Service/Generic/BaseEntityService.php(13): Doctrine\ORM\EntityManager->flush()
+#8 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Service/Entity/NamiEventService.php(26): Spitchee\Service\Generic\BaseEntityService->flush()
+#9 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Controller/NamiController.php(30): Spitchee\Service\Entity\NamiEventService->handleNewEvent(Array)
+#10 [internal function]: Spitchee\Controller\NamiController->registerEventAction(Object(Container))
+#11 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(144): call_user_func_array(Array, Array)
+#12 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(64): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#13 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(586): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#14 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(563): Silex\Application->handle(Object(Symfony\Component\HttpFoundation\Request))
+#15 /var/www-realspitchee/SILEX_WEB_REST/web/index.php(145): Silex\Application->run()
+#16 {main}
+
+[18/12/2016 18:15] Oops, Invalid Host "51.254.119.247%0d"
+#0 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1045): Symfony\Component\HttpFoundation\Request->getHost()
+#1 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1075): Symfony\Component\HttpFoundation\Request->getHttpHost()
+#2 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1713): Symfony\Component\HttpFoundation\Request->getSchemeAndHttpHost()
+#3 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1059): Symfony\Component\HttpFoundation\Request->prepareRequestUri()
+#4 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1765): Symfony\Component\HttpFoundation\Request->getRequestUri()
+#5 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(937): Symfony\Component\HttpFoundation\Request->prepareBaseUrl()
+#6 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1831): Symfony\Component\HttpFoundation\Request->getBaseUrl()
+#7 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(897): Symfony\Component\HttpFoundation\Request->preparePathInfo()
+#8 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/EventListener/FragmentListener.php(60): Symfony\Component\HttpFoundation\Request->getPathInfo()
+#9 [internal function]: Symfony\Component\HttpKernel\EventListener\FragmentListener->onKernelRequest(Object(Symfony\Component\HttpKernel\Event\GetResponseEvent), 'kernel.request', Object(Symfony\Component\EventDispatcher\EventDispatcher))
+#10 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/event-dispatcher/EventDispatcher.php(184): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\GetResponseEvent), 'kernel.request', Object(Symfony\Component\EventDispatcher\EventDispatcher))
+#11 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/event-dispatcher/EventDispatcher.php(46): Symfony\Component\EventDispatcher\EventDispatcher->doDispatch(Array, 'kernel.request', Object(Symfony\Component\HttpKernel\Event\GetResponseEvent))
+#12 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(125): Symfony\Component\EventDispatcher\EventDispatcher->dispatch('kernel.request', Object(Symfony\Component\HttpKernel\Event\GetResponseEvent))
+#13 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(64): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#14 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(586): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#15 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(563): Silex\Application->handle(Object(Symfony\Component\HttpFoundation\Request))
+#16 /var/www-realspitchee/SILEX_WEB_REST/web/index.php(145): Silex\Application->run()
+#17 {main}
+
+[21/12/2016 00:00] Oops, Invalid Host "51.254.119.247%0d"
+#0 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1045): Symfony\Component\HttpFoundation\Request->getHost()
+#1 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1075): Symfony\Component\HttpFoundation\Request->getHttpHost()
+#2 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1713): Symfony\Component\HttpFoundation\Request->getSchemeAndHttpHost()
+#3 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1059): Symfony\Component\HttpFoundation\Request->prepareRequestUri()
+#4 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1765): Symfony\Component\HttpFoundation\Request->getRequestUri()
+#5 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(937): Symfony\Component\HttpFoundation\Request->prepareBaseUrl()
+#6 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1831): Symfony\Component\HttpFoundation\Request->getBaseUrl()
+#7 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(897): Symfony\Component\HttpFoundation\Request->preparePathInfo()
+#8 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/EventListener/FragmentListener.php(60): Symfony\Component\HttpFoundation\Request->getPathInfo()
+#9 [internal function]: Symfony\Component\HttpKernel\EventListener\FragmentListener->onKernelRequest(Object(Symfony\Component\HttpKernel\Event\GetResponseEvent), 'kernel.request', Object(Symfony\Component\EventDispatcher\EventDispatcher))
+#10 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/event-dispatcher/EventDispatcher.php(184): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\GetResponseEvent), 'kernel.request', Object(Symfony\Component\EventDispatcher\EventDispatcher))
+#11 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/event-dispatcher/EventDispatcher.php(46): Symfony\Component\EventDispatcher\EventDispatcher->doDispatch(Array, 'kernel.request', Object(Symfony\Component\HttpKernel\Event\GetResponseEvent))
+#12 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(125): Symfony\Component\EventDispatcher\EventDispatcher->dispatch('kernel.request', Object(Symfony\Component\HttpKernel\Event\GetResponseEvent))
+#13 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(64): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#14 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(586): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#15 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(563): Silex\Application->handle(Object(Symfony\Component\HttpFoundation\Request))
+#16 /var/www-realspitchee/SILEX_WEB_REST/web/index.php(145): Silex\Application->run()
+#17 {main}
+
+[02/01/2017 15:26] Oops, An exception occurred while executing 'UPDATE SipAccount SET status = ? WHERE id = ?' with params [1, 9273]:
+
+SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock; try restarting transaction
+#0 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php(116): Doctrine\DBAL\Driver\AbstractMySQLDriver->convertException('An exception oc...', Object(Doctrine\DBAL\Driver\PDOException))
+#1 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(996): Doctrine\DBAL\DBALException::driverExceptionDuringQuery(Object(Doctrine\DBAL\Driver\PDOMySql\Driver), Object(Doctrine\DBAL\Driver\PDOException), 'UPDATE SipAccou...', Array)
+#2 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(480): Doctrine\DBAL\Connection->executeUpdate('UPDATE SipAccou...', Array, Array)
+#3 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(366): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->updateTable(Object(Spitchee\Entity\SipAccount), 'SipAccount', Array, NULL)
+#4 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(1069): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->update(Object(Spitchee\Entity\SipAccount))
+#5 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(384): Doctrine\ORM\UnitOfWork->executeUpdates(Object(Doctrine\ORM\Mapping\ClassMetadata))
+#6 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/EntityManager.php(356): Doctrine\ORM\UnitOfWork->commit(NULL)
+#7 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Service/Generic/BaseEntityService.php(13): Doctrine\ORM\EntityManager->flush()
+#8 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Service/Entity/NamiEventService.php(26): Spitchee\Service\Generic\BaseEntityService->flush()
+#9 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Controller/NamiController.php(30): Spitchee\Service\Entity\NamiEventService->handleNewEvent(Array)
+#10 [internal function]: Spitchee\Controller\NamiController->registerEventAction(Object(Container))
+#11 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(144): call_user_func_array(Array, Array)
+#12 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(64): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#13 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(586): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#14 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(563): Silex\Application->handle(Object(Symfony\Component\HttpFoundation\Request))
+#15 /var/www-realspitchee/SILEX_WEB_REST/web/index.php(145): Silex\Application->run()
+#16 {main}
+
+[02/01/2017 15:34] Oops, An exception occurred while executing 'UPDATE SipAccount SET status = ? WHERE id = ?' with params [1, 4929]:
+
+SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock; try restarting transaction
+#0 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php(116): Doctrine\DBAL\Driver\AbstractMySQLDriver->convertException('An exception oc...', Object(Doctrine\DBAL\Driver\PDOException))
+#1 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(996): Doctrine\DBAL\DBALException::driverExceptionDuringQuery(Object(Doctrine\DBAL\Driver\PDOMySql\Driver), Object(Doctrine\DBAL\Driver\PDOException), 'UPDATE SipAccou...', Array)
+#2 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(480): Doctrine\DBAL\Connection->executeUpdate('UPDATE SipAccou...', Array, Array)
+#3 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(366): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->updateTable(Object(Spitchee\Entity\SipAccount), 'SipAccount', Array, NULL)
+#4 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(1069): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->update(Object(Spitchee\Entity\SipAccount))
+#5 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(384): Doctrine\ORM\UnitOfWork->executeUpdates(Object(Doctrine\ORM\Mapping\ClassMetadata))
+#6 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/EntityManager.php(356): Doctrine\ORM\UnitOfWork->commit(NULL)
+#7 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Service/Generic/BaseEntityService.php(13): Doctrine\ORM\EntityManager->flush()
+#8 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Service/Entity/NamiEventService.php(26): Spitchee\Service\Generic\BaseEntityService->flush()
+#9 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Controller/NamiController.php(30): Spitchee\Service\Entity\NamiEventService->handleNewEvent(Array)
+#10 [internal function]: Spitchee\Controller\NamiController->registerEventAction(Object(Container))
+#11 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(144): call_user_func_array(Array, Array)
+#12 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(64): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#13 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(586): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#14 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(563): Silex\Application->handle(Object(Symfony\Component\HttpFoundation\Request))
+#15 /var/www-realspitchee/SILEX_WEB_REST/web/index.php(145): Silex\Application->run()
+#16 {main}
+
+[09/01/2017 15:29] Oops, An exception occurred while executing 'UPDATE SipAccount SET status = ? WHERE id = ?' with params [1, 6752]:
+
+SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock; try restarting transaction
+#0 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php(116): Doctrine\DBAL\Driver\AbstractMySQLDriver->convertException('An exception oc...', Object(Doctrine\DBAL\Driver\PDOException))
+#1 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(996): Doctrine\DBAL\DBALException::driverExceptionDuringQuery(Object(Doctrine\DBAL\Driver\PDOMySql\Driver), Object(Doctrine\DBAL\Driver\PDOException), 'UPDATE SipAccou...', Array)
+#2 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(480): Doctrine\DBAL\Connection->executeUpdate('UPDATE SipAccou...', Array, Array)
+#3 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(366): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->updateTable(Object(Spitchee\Entity\SipAccount), 'SipAccount', Array, NULL)
+#4 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(1069): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->update(Object(Spitchee\Entity\SipAccount))
+#5 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(384): Doctrine\ORM\UnitOfWork->executeUpdates(Object(Doctrine\ORM\Mapping\ClassMetadata))
+#6 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/EntityManager.php(356): Doctrine\ORM\UnitOfWork->commit(NULL)
+#7 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Service/Generic/BaseEntityService.php(13): Doctrine\ORM\EntityManager->flush()
+#8 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Service/Entity/NamiEventService.php(26): Spitchee\Service\Generic\BaseEntityService->flush()
+#9 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Controller/NamiController.php(30): Spitchee\Service\Entity\NamiEventService->handleNewEvent(Array)
+#10 [internal function]: Spitchee\Controller\NamiController->registerEventAction(Object(Container))
+#11 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(144): call_user_func_array(Array, Array)
+#12 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(64): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#13 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(586): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#14 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(563): Silex\Application->handle(Object(Symfony\Component\HttpFoundation\Request))
+#15 /var/www-realspitchee/SILEX_WEB_REST/web/index.php(145): Silex\Application->run()
+#16 {main}
+
+[17/01/2017 09:25] Oops, Invalid Host "51.254.119.247%0d"
+#0 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1045): Symfony\Component\HttpFoundation\Request->getHost()
+#1 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1075): Symfony\Component\HttpFoundation\Request->getHttpHost()
+#2 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1713): Symfony\Component\HttpFoundation\Request->getSchemeAndHttpHost()
+#3 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1059): Symfony\Component\HttpFoundation\Request->prepareRequestUri()
+#4 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1765): Symfony\Component\HttpFoundation\Request->getRequestUri()
+#5 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(937): Symfony\Component\HttpFoundation\Request->prepareBaseUrl()
+#6 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1831): Symfony\Component\HttpFoundation\Request->getBaseUrl()
+#7 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(897): Symfony\Component\HttpFoundation\Request->preparePathInfo()
+#8 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/EventListener/FragmentListener.php(60): Symfony\Component\HttpFoundation\Request->getPathInfo()
+#9 [internal function]: Symfony\Component\HttpKernel\EventListener\FragmentListener->onKernelRequest(Object(Symfony\Component\HttpKernel\Event\GetResponseEvent), 'kernel.request', Object(Symfony\Component\EventDispatcher\EventDispatcher))
+#10 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/event-dispatcher/EventDispatcher.php(184): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\GetResponseEvent), 'kernel.request', Object(Symfony\Component\EventDispatcher\EventDispatcher))
+#11 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/event-dispatcher/EventDispatcher.php(46): Symfony\Component\EventDispatcher\EventDispatcher->doDispatch(Array, 'kernel.request', Object(Symfony\Component\HttpKernel\Event\GetResponseEvent))
+#12 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(125): Symfony\Component\EventDispatcher\EventDispatcher->dispatch('kernel.request', Object(Symfony\Component\HttpKernel\Event\GetResponseEvent))
+#13 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(64): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#14 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(586): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#15 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(563): Silex\Application->handle(Object(Symfony\Component\HttpFoundation\Request))
+#16 /var/www-realspitchee/SILEX_WEB_REST/web/index.php(145): Silex\Application->run()
+#17 {main}
+
+[17/01/2017 09:26] Oops, Invalid Host "51.254.119.247%0d"
+#0 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1045): Symfony\Component\HttpFoundation\Request->getHost()
+#1 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1075): Symfony\Component\HttpFoundation\Request->getHttpHost()
+#2 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1713): Symfony\Component\HttpFoundation\Request->getSchemeAndHttpHost()
+#3 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1059): Symfony\Component\HttpFoundation\Request->prepareRequestUri()
+#4 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1765): Symfony\Component\HttpFoundation\Request->getRequestUri()
+#5 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(937): Symfony\Component\HttpFoundation\Request->prepareBaseUrl()
+#6 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1831): Symfony\Component\HttpFoundation\Request->getBaseUrl()
+#7 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(897): Symfony\Component\HttpFoundation\Request->preparePathInfo()
+#8 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/EventListener/FragmentListener.php(60): Symfony\Component\HttpFoundation\Request->getPathInfo()
+#9 [internal function]: Symfony\Component\HttpKernel\EventListener\FragmentListener->onKernelRequest(Object(Symfony\Component\HttpKernel\Event\GetResponseEvent), 'kernel.request', Object(Symfony\Component\EventDispatcher\EventDispatcher))
+#10 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/event-dispatcher/EventDispatcher.php(184): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\GetResponseEvent), 'kernel.request', Object(Symfony\Component\EventDispatcher\EventDispatcher))
+#11 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/event-dispatcher/EventDispatcher.php(46): Symfony\Component\EventDispatcher\EventDispatcher->doDispatch(Array, 'kernel.request', Object(Symfony\Component\HttpKernel\Event\GetResponseEvent))
+#12 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(125): Symfony\Component\EventDispatcher\EventDispatcher->dispatch('kernel.request', Object(Symfony\Component\HttpKernel\Event\GetResponseEvent))
+#13 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(64): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#14 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(586): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#15 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(563): Silex\Application->handle(Object(Symfony\Component\HttpFoundation\Request))
+#16 /var/www-realspitchee/SILEX_WEB_REST/web/index.php(145): Silex\Application->run()
+#17 {main}
+
+[26/01/2017 18:32] Oops, Invalid Host "51.254.119.247%0d"
+#0 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1045): Symfony\Component\HttpFoundation\Request->getHost()
+#1 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1075): Symfony\Component\HttpFoundation\Request->getHttpHost()
+#2 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1713): Symfony\Component\HttpFoundation\Request->getSchemeAndHttpHost()
+#3 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1059): Symfony\Component\HttpFoundation\Request->prepareRequestUri()
+#4 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1765): Symfony\Component\HttpFoundation\Request->getRequestUri()
+#5 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(937): Symfony\Component\HttpFoundation\Request->prepareBaseUrl()
+#6 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1831): Symfony\Component\HttpFoundation\Request->getBaseUrl()
+#7 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(897): Symfony\Component\HttpFoundation\Request->preparePathInfo()
+#8 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/EventListener/FragmentListener.php(60): Symfony\Component\HttpFoundation\Request->getPathInfo()
+#9 [internal function]: Symfony\Component\HttpKernel\EventListener\FragmentListener->onKernelRequest(Object(Symfony\Component\HttpKernel\Event\GetResponseEvent), 'kernel.request', Object(Symfony\Component\EventDispatcher\EventDispatcher))
+#10 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/event-dispatcher/EventDispatcher.php(184): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\GetResponseEvent), 'kernel.request', Object(Symfony\Component\EventDispatcher\EventDispatcher))
+#11 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/event-dispatcher/EventDispatcher.php(46): Symfony\Component\EventDispatcher\EventDispatcher->doDispatch(Array, 'kernel.request', Object(Symfony\Component\HttpKernel\Event\GetResponseEvent))
+#12 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(125): Symfony\Component\EventDispatcher\EventDispatcher->dispatch('kernel.request', Object(Symfony\Component\HttpKernel\Event\GetResponseEvent))
+#13 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(64): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#14 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(586): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#15 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(563): Silex\Application->handle(Object(Symfony\Component\HttpFoundation\Request))
+#16 /var/www-realspitchee/SILEX_WEB_REST/web/index.php(145): Silex\Application->run()
+#17 {main}
+
+[26/01/2017 18:41] Oops, Invalid Host "51.254.119.247%0d"
+#0 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1045): Symfony\Component\HttpFoundation\Request->getHost()
+#1 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1075): Symfony\Component\HttpFoundation\Request->getHttpHost()
+#2 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1713): Symfony\Component\HttpFoundation\Request->getSchemeAndHttpHost()
+#3 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1059): Symfony\Component\HttpFoundation\Request->prepareRequestUri()
+#4 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1765): Symfony\Component\HttpFoundation\Request->getRequestUri()
+#5 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(937): Symfony\Component\HttpFoundation\Request->prepareBaseUrl()
+#6 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1831): Symfony\Component\HttpFoundation\Request->getBaseUrl()
+#7 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(897): Symfony\Component\HttpFoundation\Request->preparePathInfo()
+#8 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/EventListener/FragmentListener.php(60): Symfony\Component\HttpFoundation\Request->getPathInfo()
+#9 [internal function]: Symfony\Component\HttpKernel\EventListener\FragmentListener->onKernelRequest(Object(Symfony\Component\HttpKernel\Event\GetResponseEvent), 'kernel.request', Object(Symfony\Component\EventDispatcher\EventDispatcher))
+#10 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/event-dispatcher/EventDispatcher.php(184): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\GetResponseEvent), 'kernel.request', Object(Symfony\Component\EventDispatcher\EventDispatcher))
+#11 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/event-dispatcher/EventDispatcher.php(46): Symfony\Component\EventDispatcher\EventDispatcher->doDispatch(Array, 'kernel.request', Object(Symfony\Component\HttpKernel\Event\GetResponseEvent))
+#12 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(125): Symfony\Component\EventDispatcher\EventDispatcher->dispatch('kernel.request', Object(Symfony\Component\HttpKernel\Event\GetResponseEvent))
+#13 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(64): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#14 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(586): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#15 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(563): Silex\Application->handle(Object(Symfony\Component\HttpFoundation\Request))
+#16 /var/www-realspitchee/SILEX_WEB_REST/web/index.php(145): Silex\Application->run()
+#17 {main}
+
+[27/01/2017 01:27] Oops, Invalid Host "51.254.119.247%0d"
+#0 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1045): Symfony\Component\HttpFoundation\Request->getHost()
+#1 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1075): Symfony\Component\HttpFoundation\Request->getHttpHost()
+#2 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1713): Symfony\Component\HttpFoundation\Request->getSchemeAndHttpHost()
+#3 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1059): Symfony\Component\HttpFoundation\Request->prepareRequestUri()
+#4 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1765): Symfony\Component\HttpFoundation\Request->getRequestUri()
+#5 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(937): Symfony\Component\HttpFoundation\Request->prepareBaseUrl()
+#6 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1831): Symfony\Component\HttpFoundation\Request->getBaseUrl()
+#7 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(897): Symfony\Component\HttpFoundation\Request->preparePathInfo()
+#8 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/EventListener/FragmentListener.php(60): Symfony\Component\HttpFoundation\Request->getPathInfo()
+#9 [internal function]: Symfony\Component\HttpKernel\EventListener\FragmentListener->onKernelRequest(Object(Symfony\Component\HttpKernel\Event\GetResponseEvent), 'kernel.request', Object(Symfony\Component\EventDispatcher\EventDispatcher))
+#10 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/event-dispatcher/EventDispatcher.php(184): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\GetResponseEvent), 'kernel.request', Object(Symfony\Component\EventDispatcher\EventDispatcher))
+#11 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/event-dispatcher/EventDispatcher.php(46): Symfony\Component\EventDispatcher\EventDispatcher->doDispatch(Array, 'kernel.request', Object(Symfony\Component\HttpKernel\Event\GetResponseEvent))
+#12 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(125): Symfony\Component\EventDispatcher\EventDispatcher->dispatch('kernel.request', Object(Symfony\Component\HttpKernel\Event\GetResponseEvent))
+#13 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(64): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#14 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(586): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#15 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(563): Silex\Application->handle(Object(Symfony\Component\HttpFoundation\Request))
+#16 /var/www-realspitchee/SILEX_WEB_REST/web/index.php(145): Silex\Application->run()
+#17 {main}
+
+[30/01/2017 11:37] Oops, An exception occurred while executing 'UPDATE SipAccount SET status = ? WHERE id = ?' with params [1, 9827]:
+
+SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock; try restarting transaction
+#0 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php(116): Doctrine\DBAL\Driver\AbstractMySQLDriver->convertException('An exception oc...', Object(Doctrine\DBAL\Driver\PDOException))
+#1 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(996): Doctrine\DBAL\DBALException::driverExceptionDuringQuery(Object(Doctrine\DBAL\Driver\PDOMySql\Driver), Object(Doctrine\DBAL\Driver\PDOException), 'UPDATE SipAccou...', Array)
+#2 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(480): Doctrine\DBAL\Connection->executeUpdate('UPDATE SipAccou...', Array, Array)
+#3 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(366): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->updateTable(Object(Spitchee\Entity\SipAccount), 'SipAccount', Array, NULL)
+#4 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(1069): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->update(Object(Spitchee\Entity\SipAccount))
+#5 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(384): Doctrine\ORM\UnitOfWork->executeUpdates(Object(Doctrine\ORM\Mapping\ClassMetadata))
+#6 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/EntityManager.php(356): Doctrine\ORM\UnitOfWork->commit(NULL)
+#7 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Service/Generic/BaseEntityService.php(13): Doctrine\ORM\EntityManager->flush()
+#8 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Service/Entity/NamiEventService.php(26): Spitchee\Service\Generic\BaseEntityService->flush()
+#9 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Controller/NamiController.php(30): Spitchee\Service\Entity\NamiEventService->handleNewEvent(Array)
+#10 [internal function]: Spitchee\Controller\NamiController->registerEventAction(Object(Container))
+#11 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(144): call_user_func_array(Array, Array)
+#12 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(64): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#13 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(586): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#14 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(563): Silex\Application->handle(Object(Symfony\Component\HttpFoundation\Request))
+#15 /var/www-realspitchee/SILEX_WEB_REST/web/index.php(145): Silex\Application->run()
+#16 {main}
+
+[30/01/2017 15:40] Oops, An exception occurred while executing 'UPDATE SipAccount SET status = ? WHERE id = ?' with params [1, 3981]:
+
+SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock; try restarting transaction
+#0 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php(116): Doctrine\DBAL\Driver\AbstractMySQLDriver->convertException('An exception oc...', Object(Doctrine\DBAL\Driver\PDOException))
+#1 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(996): Doctrine\DBAL\DBALException::driverExceptionDuringQuery(Object(Doctrine\DBAL\Driver\PDOMySql\Driver), Object(Doctrine\DBAL\Driver\PDOException), 'UPDATE SipAccou...', Array)
+#2 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(480): Doctrine\DBAL\Connection->executeUpdate('UPDATE SipAccou...', Array, Array)
+#3 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(366): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->updateTable(Object(Spitchee\Entity\SipAccount), 'SipAccount', Array, NULL)
+#4 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(1069): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->update(Object(Spitchee\Entity\SipAccount))
+#5 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(384): Doctrine\ORM\UnitOfWork->executeUpdates(Object(Doctrine\ORM\Mapping\ClassMetadata))
+#6 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/EntityManager.php(356): Doctrine\ORM\UnitOfWork->commit(NULL)
+#7 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Service/Generic/BaseEntityService.php(13): Doctrine\ORM\EntityManager->flush()
+#8 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Service/Entity/NamiEventService.php(26): Spitchee\Service\Generic\BaseEntityService->flush()
+#9 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Controller/NamiController.php(30): Spitchee\Service\Entity\NamiEventService->handleNewEvent(Array)
+#10 [internal function]: Spitchee\Controller\NamiController->registerEventAction(Object(Container))
+#11 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(144): call_user_func_array(Array, Array)
+#12 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(64): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#13 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(586): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#14 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(563): Silex\Application->handle(Object(Symfony\Component\HttpFoundation\Request))
+#15 /var/www-realspitchee/SILEX_WEB_REST/web/index.php(145): Silex\Application->run()
+#16 {main}
+
+[30/01/2017 16:23] Oops, An exception occurred while executing 'UPDATE SipAccount SET status = ? WHERE id = ?' with params [1, 8382]:
+
+SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock; try restarting transaction
+#0 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php(116): Doctrine\DBAL\Driver\AbstractMySQLDriver->convertException('An exception oc...', Object(Doctrine\DBAL\Driver\PDOException))
+#1 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(996): Doctrine\DBAL\DBALException::driverExceptionDuringQuery(Object(Doctrine\DBAL\Driver\PDOMySql\Driver), Object(Doctrine\DBAL\Driver\PDOException), 'UPDATE SipAccou...', Array)
+#2 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(480): Doctrine\DBAL\Connection->executeUpdate('UPDATE SipAccou...', Array, Array)
+#3 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(366): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->updateTable(Object(Spitchee\Entity\SipAccount), 'SipAccount', Array, NULL)
+#4 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(1069): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->update(Object(Spitchee\Entity\SipAccount))
+#5 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(384): Doctrine\ORM\UnitOfWork->executeUpdates(Object(Doctrine\ORM\Mapping\ClassMetadata))
+#6 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/EntityManager.php(356): Doctrine\ORM\UnitOfWork->commit(NULL)
+#7 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Service/Generic/BaseEntityService.php(13): Doctrine\ORM\EntityManager->flush()
+#8 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Service/Entity/NamiEventService.php(26): Spitchee\Service\Generic\BaseEntityService->flush()
+#9 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Controller/NamiController.php(30): Spitchee\Service\Entity\NamiEventService->handleNewEvent(Array)
+#10 [internal function]: Spitchee\Controller\NamiController->registerEventAction(Object(Container))
+#11 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(144): call_user_func_array(Array, Array)
+#12 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(64): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#13 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(586): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#14 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(563): Silex\Application->handle(Object(Symfony\Component\HttpFoundation\Request))
+#15 /var/www-realspitchee/SILEX_WEB_REST/web/index.php(145): Silex\Application->run()
+#16 {main}
+
+[21/03/2017 13:19] Oops, An exception occurred while executing 'INSERT INTO Conference (uuid, state) VALUES (?, ?)' with params [1, 0]:
+
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'PRIMARY'
+#0 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php(116): Doctrine\DBAL\Driver\AbstractMySQLDriver->convertException('An exception oc...', Object(Doctrine\DBAL\Driver\PDOException))
+#1 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/dbal/lib/Doctrine/DBAL/Statement.php(175): Doctrine\DBAL\DBALException::driverExceptionDuringQuery(Object(Doctrine\DBAL\Driver\PDOMySql\Driver), Object(Doctrine\DBAL\Driver\PDOException), 'INSERT INTO Con...', Array)
+#2 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(281): Doctrine\DBAL\Statement->execute()
+#3 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(1018): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->executeInserts()
+#4 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(378): Doctrine\ORM\UnitOfWork->executeInserts(Object(Doctrine\ORM\Mapping\ClassMetadata))
+#5 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/EntityManager.php(356): Doctrine\ORM\UnitOfWork->commit(NULL)
+#6 /var/www-realspitchee/SILEX_WEB_REST/web/index.php(70): Doctrine\ORM\EntityManager->flush()
+#7 [internal function]: {closure}()
+#8 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(144): call_user_func_array(Object(Closure), Array)
+#9 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(64): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#10 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(586): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#11 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(563): Silex\Application->handle(Object(Symfony\Component\HttpFoundation\Request))
+#12 /var/www-realspitchee/SILEX_WEB_REST/web/index.php(145): Silex\Application->run()
+#13 {main}
+
+[17/05/2017 11:21] Oops, Warning: file_put_contents(): Only 0 of 7668 bytes written, possibly out of free disk space
+#0 [internal function]: Symfony\Component\Debug\ErrorHandler->handleError(2, 'file_put_conten...', '/var/www-realsp...', 304, Array)
+#1 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/common/lib/Doctrine/Common/Proxy/ProxyGenerator.php(304): file_put_contents('/var/www-realsp...', '<?php\n\nnamespac...')
+#2 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/common/lib/Doctrine/Common/Proxy/AbstractProxyFactory.php(220): Doctrine\Common\Proxy\ProxyGenerator->generateProxyClass(Object(Doctrine\ORM\Mapping\ClassMetadata), '/var/www-realsp...')
+#3 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/common/lib/Doctrine/Common/Proxy/AbstractProxyFactory.php(119): Doctrine\Common\Proxy\AbstractProxyFactory->getProxyDefinition('Spitchee\\Entity...')
+#4 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(2707): Doctrine\Common\Proxy\AbstractProxyFactory->getProxy('Spitchee\\Entity...', Array)
+#5 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Internal/Hydration/ObjectHydrator.php(273): Doctrine\ORM\UnitOfWork->createEntity('Spitchee\\Entity...', Array, Array)
+#6 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Internal/Hydration/ObjectHydrator.php(491): Doctrine\ORM\Internal\Hydration\ObjectHydrator->getEntity(Array, 'r')
+#7 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Internal/Hydration/ObjectHydrator.php(165): Doctrine\ORM\Internal\Hydration\ObjectHydrator->hydrateRowData(Array, Array)
+#8 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Internal/Hydration/AbstractHydrator.php(147): Doctrine\ORM\Internal\Hydration\ObjectHydrator->hydrateAllData()
+#9 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(720): Doctrine\ORM\Internal\Hydration\AbstractHydrator->hydrateAll(Object(Doctrine\DBAL\Driver\PDOStatement), Object(Doctrine\ORM\Query\ResultSetMapping), Array)
+#10 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(761): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->load(Array, NULL, Array, Array)
+#11 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(2700): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->loadOneToOneEntity(Array, Object(Spitchee\Entity\SipAccount), Array)
+#12 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Internal/Hydration/SimpleObjectHydrator.php(144): Doctrine\ORM\UnitOfWork->createEntity('Spitchee\\Entity...', Array, Array)
+#13 /var/www-realspitchee/SILEX_WEB_REST[02/07/2017 01:16] Oops, Invalid Host "51.254.119.247%0d"
+#0 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1045): Symfony\Component\HttpFoundation\Request->getHost()
+#1 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1075): Symfony\Component\HttpFoundation\Request->getHttpHost()
+#2 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1713): Symfony\Component\HttpFoundation\Request->getSchemeAndHttpHost()
+#3 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1059): Symfony\Component\HttpFoundation\Request->prepareRequestUri()
+#4 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1765): Symfony\Component\HttpFoundation\Request->getRequestUri()
+#5 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(937): Symfony\Component\HttpFoundation\Request->prepareBaseUrl()
+#6 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1831): Symfony\Component\HttpFoundation\Request->getBaseUrl()
+#7 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(897): Symfony\Component\HttpFoundation\Request->preparePathInfo()
+#8 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/EventListener/FragmentListener.php(60): Symfony\Component\HttpFoundation\Request->getPathInfo()
+#9 [internal function]: Symfony\Component\HttpKernel\EventListener\FragmentListener->onKernelRequest(Object(Symfony\Component\HttpKernel\Event\GetResponseEvent), 'kernel.request', Object(Symfony\Component\EventDispatcher\EventDispatcher))
+#10 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/event-dispatcher/EventDispatcher.php(184): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\GetResponseEvent), 'kernel.request', Object(Symfony\Component\EventDispatcher\EventDispatcher))
+#11 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/event-dispatcher/EventDispatcher.php(46): Symfony\Component\EventDispatcher\EventDispatcher->doDispatch(Array, 'kernel.request', Object(Symfony\Component\HttpKernel\Event\GetResponseEvent))
+#12 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(125): Symfony\Component\EventDispatcher\EventDispatcher->dispatch('kernel.request', Object(Symfony\Component\HttpKernel\Event\GetResponseEvent))
+#13 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(64): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#14 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(586): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#15 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(563): Silex\Application->handle(Object(Symfony\Component\HttpFoundation\Request))
+#16 /var/www-realspitchee/SILEX_WEB_REST/web/index.php(145): Silex\Application->run()
+#17 {main}
+
+[02/07/2017 03:21] Oops, Invalid Host "51.254.119.247%0d"
+#0 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1045): Symfony\Component\HttpFoundation\Request->getHost()
+#1 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1075): Symfony\Component\HttpFoundation\Request->getHttpHost()
+#2 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1713): Symfony\Component\HttpFoundation\Request->getSchemeAndHttpHost()
+#3 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1059): Symfony\Component\HttpFoundation\Request->prepareRequestUri()
+#4 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1765): Symfony\Component\HttpFoundation\Request->getRequestUri()
+#5 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(937): Symfony\Component\HttpFoundation\Request->prepareBaseUrl()
+#6 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1831): Symfony\Component\HttpFoundation\Request->getBaseUrl()
+#7 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(897): Symfony\Component\HttpFoundation\Request->preparePathInfo()
+#8 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/EventListener/FragmentListener.php(60): Symfony\Component\HttpFoundation\Request->getPathInfo()
+#9 [internal function]: Symfony\Component\HttpKernel\EventListener\FragmentListener->onKernelRequest(Object(Symfony\Component\HttpKernel\Event\GetResponseEvent), 'kernel.request', Object(Symfony\Component\EventDispatcher\EventDispatcher))
+#10 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/event-dispatcher/EventDispatcher.php(184): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\GetResponseEvent), 'kernel.request', Object(Symfony\Component\EventDispatcher\EventDispatcher))
+#11 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/event-dispatcher/EventDispatcher.php(46): Symfony\Component\EventDispatcher\EventDispatcher->doDispatch(Array, 'kernel.request', Object(Symfony\Component\HttpKernel\Event\GetResponseEvent))
+#12 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(125): Symfony\Component\EventDispatcher\EventDispatcher->dispatch('kernel.request', Object(Symfony\Component\HttpKernel\Event\GetResponseEvent))
+#13 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(64): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#14 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(586): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#15 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(563): Silex\Application->handle(Object(Symfony\Component\HttpFoundation\Request))
+#16 /var/www-realspitchee/SILEX_WEB_REST/web/index.php(145): Silex\Application->run()
+#17 {main}
+
+[10/07/2017 22:07] Oops, An exception occurred while executing 'UPDATE SipAccount SET status = ? WHERE id = ?' with params [1, 3719]:
+
+SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock; try restarting transaction
+#0 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php(116): Doctrine\DBAL\Driver\AbstractMySQLDriver->convertException('An exception oc...', Object(Doctrine\DBAL\Driver\PDOException))
+#1 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(996): Doctrine\DBAL\DBALException::driverExceptionDuringQuery(Object(Doctrine\DBAL\Driver\PDOMySql\Driver), Object(Doctrine\DBAL\Driver\PDOException), 'UPDATE SipAccou...', Array)
+#2 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(480): Doctrine\DBAL\Connection->executeUpdate('UPDATE SipAccou...', Array, Array)
+#3 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(366): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->updateTable(Object(Spitchee\Entity\SipAccount), 'SipAccount', Array, NULL)
+#4 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(1069): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->update(Object(Spitchee\Entity\SipAccount))
+#5 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(384): Doctrine\ORM\UnitOfWork->executeUpdates(Object(Doctrine\ORM\Mapping\ClassMetadata))
+#6 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/EntityManager.php(356): Doctrine\ORM\UnitOfWork->commit(NULL)
+#7 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Service/Generic/BaseEntityService.php(13): Doctrine\ORM\EntityManager->flush()
+#8 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Service/Entity/NamiEventService.php(26): Spitchee\Service\Generic\BaseEntityService->flush()
+#9 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Controller/NamiController.php(30): Spitchee\Service\Entity\NamiEventService->handleNewEvent(Array)
+#10 [internal function]: Spitchee\Controller\NamiController->registerEventAction(Object(Container))
+#11 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(144): call_user_func_array(Array, Array)
+#12 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(64): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#13 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(586): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#14 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(563): Silex\Application->handle(Object(Symfony\Component\HttpFoundation\Request))
+#15 /var/www-realspitchee/SILEX_WEB_REST/web/index.php(145): Silex\Application->run()
+#16 {main}
+
+[10/07/2017 23:37] Oops, An exception occurred while executing 'UPDATE SipAccount SET status = ? WHERE id = ?' with params [1, 3719]:
+
+SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock; try restarting transaction
+#0 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php(116): Doctrine\DBAL\Driver\AbstractMySQLDriver->convertException('An exception oc...', Object(Doctrine\DBAL\Driver\PDOException))
+#1 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(996): Doctrine\DBAL\DBALException::driverExceptionDuringQuery(Object(Doctrine\DBAL\Driver\PDOMySql\Driver), Object(Doctrine\DBAL\Driver\PDOException), 'UPDATE SipAccou...', Array)
+#2 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(480): Doctrine\DBAL\Connection->executeUpdate('UPDATE SipAccou...', Array, Array)
+#3 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(366): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->updateTable(Object(Spitchee\Entity\SipAccount), 'SipAccount', Array, NULL)
+#4 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(1069): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->update(Object(Spitchee\Entity\SipAccount))
+#5 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(384): Doctrine\ORM\UnitOfWork->executeUpdates(Object(Doctrine\ORM\Mapping\ClassMetadata))
+#6 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/EntityManager.php(356): Doctrine\ORM\UnitOfWork->commit(NULL)
+#7 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Service/Generic/BaseEntityService.php(13): Doctrine\ORM\EntityManager->flush()
+#8 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Service/Entity/NamiEventService.php(26): Spitchee\Service\Generic\BaseEntityService->flush()
+#9 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Controller/NamiController.php(30): Spitchee\Service\Entity\NamiEventService->handleNewEvent(Array)
+#10 [internal function]: Spitchee\Controller\NamiController->registerEventAction(Object(Container))
+#11 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(144): call_user_func_array(Array, Array)
+#12 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(64): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#13 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(586): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#14 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(563): Silex\Application->handle(Object(Symfony\Component\HttpFoundation\Request))
+#15 /var/www-realspitchee/SILEX_WEB_REST/web/index.php(145): Silex\Application->run()
+#16 {main}
+
+[11/07/2017 00:56] Oops, An exception occurred while executing 'UPDATE SipAccount SET status = ? WHERE id = ?' with params [1, 3719]:
+
+SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock; try restarting transaction
+#0 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php(116): Doctrine\DBAL\Driver\AbstractMySQLDriver->convertException('An exception oc...', Object(Doctrine\DBAL\Driver\PDOException))
+#1 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(996): Doctrine\DBAL\DBALException::driverExceptionDuringQuery(Object(Doctrine\DBAL\Driver\PDOMySql\Driver), Object(Doctrine\DBAL\Driver\PDOException), 'UPDATE SipAccou...', Array)
+#2 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(480): Doctrine\DBAL\Connection->executeUpdate('UPDATE SipAccou...', Array, Array)
+#3 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(366): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->updateTable(Object(Spitchee\Entity\SipAccount), 'SipAccount', Array, NULL)
+#4 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(1069): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->update(Object(Spitchee\Entity\SipAccount))
+#5 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(384): Doctrine\ORM\UnitOfWork->executeUpdates(Object(Doctrine\ORM\Mapping\ClassMetadata))
+#6 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/EntityManager.php(356): Doctrine\ORM\UnitOfWork->commit(NULL)
+#7 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Service/Generic/BaseEntityService.php(13): Doctrine\ORM\EntityManager->flush()
+#8 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Service/Entity/NamiEventService.php(26): Spitchee\Service\Generic\BaseEntityService->flush()
+#9 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Controller/NamiController.php(30): Spitchee\Service\Entity\NamiEventService->handleNewEvent(Array)
+#10 [internal function]: Spitchee\Controller\NamiController->registerEventAction(Object(Container))
+#11 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(144): call_user_func_array(Array, Array)
+#12 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(64): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#13 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(586): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#14 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(563): Silex\Application->handle(Object(Symfony\Component\HttpFoundation\Request))
+#15 /var/www-realspitchee/SILEX_WEB_REST/web/index.php(145): Silex\Application->run()
+#16 {main}
+
+[11/07/2017 06:00] Oops, An exception occurred while executing 'UPDATE SipAccount SET status = ? WHERE id = ?' with params [1, 3719]:
+
+SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock; try restarting transaction
+#0 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php(116): Doctrine\DBAL\Driver\AbstractMySQLDriver->convertException('An exception oc...', Object(Doctrine\DBAL\Driver\PDOException))
+#1 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(996): Doctrine\DBAL\DBALException::driverExceptionDuringQuery(Object(Doctrine\DBAL\Driver\PDOMySql\Driver), Object(Doctrine\DBAL\Driver\PDOException), 'UPDATE SipAccou...', Array)
+#2 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(480): Doctrine\DBAL\Connection->executeUpdate('UPDATE SipAccou...', Array, Array)
+#3 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(366): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->updateTable(Object(Spitchee\Entity\SipAccount), 'SipAccount', Array, NULL)
+#4 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(1069): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->update(Object(Spitchee\Entity\SipAccount))
+#5 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(384): Doctrine\ORM\UnitOfWork->executeUpdates(Object(Doctrine\ORM\Mapping\ClassMetadata))
+#6 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/EntityManager.php(356): Doctrine\ORM\UnitOfWork->commit(NULL)
+#7 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Service/Generic/BaseEntityService.php(13): Doctrine\ORM\EntityManager->flush()
+#8 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Service/Entity/NamiEventService.php(26): Spitchee\Service\Generic\BaseEntityService->flush()
+#9 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Controller/NamiController.php(30): Spitchee\Service\Entity\NamiEventService->handleNewEvent(Array)
+#10 [internal function]: Spitchee\Controller\NamiController->registerEventAction(Object(Container))
+#11 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(144): call_user_func_array(Array, Array)
+#12 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(64): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#13 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(586): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#14 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(563): Silex\Application->handle(Object(Symfony\Component\HttpFoundation\Request))
+#15 /var/www-realspitchee/SILEX_WEB_REST/web/index.php(145): Silex\Application->run()
+#16 {main}
+
+[16/07/2017 23:09] Oops, Invalid Host "."
+#0 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1045): Symfony\Component\HttpFoundation\Request->getHost()
+#1 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1075): Symfony\Component\HttpFoundation\Request->getHttpHost()
+#2 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1713): Symfony\Component\HttpFoundation\Request->getSchemeAndHttpHost()
+#3 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1059): Symfony\Component\HttpFoundation\Request->prepareRequestUri()
+#4 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1765): Symfony\Component\HttpFoundation\Request->getRequestUri()
+#5 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(937): Symfony\Component\HttpFoundation\Request->prepareBaseUrl()
+#6 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1831): Symfony\Component\HttpFoundation\Request->getBaseUrl()
+#7 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(897): Symfony\Component\HttpFoundation\Request->preparePathInfo()
+#8 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/EventListener/FragmentListener.php(60): Symfony\Component\HttpFoundation\Request->getPathInfo()
+#9 [internal function]: Symfony\Component\HttpKernel\EventListener\FragmentListener->onKernelRequest(Object(Symfony\Component\HttpKernel\Event\GetResponseEvent), 'kernel.request', Object(Symfony\Component\EventDispatcher\EventDispatcher))
+#10 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/event-dispatcher/EventDispatcher.php(184): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\GetResponseEvent), 'kernel.request', Object(Symfony\Component\EventDispatcher\EventDispatcher))
+#11 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/event-dispatcher/EventDispatcher.php(46): Symfony\Component\EventDispatcher\EventDispatcher->doDispatch(Array, 'kernel.request', Object(Symfony\Component\HttpKernel\Event\GetResponseEvent))
+#12 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(125): Symfony\Component\EventDispatcher\EventDispatcher->dispatch('kernel.request', Object(Symfony\Component\HttpKernel\Event\GetResponseEvent))
+#13 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(64): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#14 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(586): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#15 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(563): Silex\Application->handle(Object(Symfony\Component\HttpFoundation\Request))
+#16 /var/www-realspitchee/SILEX_WEB_REST/web/index.php(145): Silex\Application->run()
+#17 {main}
+
+[24/07/2017 10:51] Oops, Invalid Host "."
+#0 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1045): Symfony\Component\HttpFoundation\Request->getHost()
+#1 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1075): Symfony\Component\HttpFoundation\Request->getHttpHost()
+#2 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1713): Symfony\Component\HttpFoundation\Request->getSchemeAndHttpHost()
+#3 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1059): Symfony\Component\HttpFoundation\Request->prepareRequestUri()
+#4 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1765): Symfony\Component\HttpFoundation\Request->getRequestUri()
+#5 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(937): Symfony\Component\HttpFoundation\Request->prepareBaseUrl()
+#6 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(1831): Symfony\Component\HttpFoundation\Request->getBaseUrl()
+#7 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-foundation/Request.php(897): Symfony\Component\HttpFoundation\Request->preparePathInfo()
+#8 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/EventListener/FragmentListener.php(60): Symfony\Component\HttpFoundation\Request->getPathInfo()
+#9 [internal function]: Symfony\Component\HttpKernel\EventListener\FragmentListener->onKernelRequest(Object(Symfony\Component\HttpKernel\Event\GetResponseEvent), 'kernel.request', Object(Symfony\Component\EventDispatcher\EventDispatcher))
+#10 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/event-dispatcher/EventDispatcher.php(184): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\GetResponseEvent), 'kernel.request', Object(Symfony\Component\EventDispatcher\EventDispatcher))
+#11 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/event-dispatcher/EventDispatcher.php(46): Symfony\Component\EventDispatcher\EventDispatcher->doDispatch(Array, 'kernel.request', Object(Symfony\Component\HttpKernel\Event\GetResponseEvent))
+#12 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(125): Symfony\Component\EventDispatcher\EventDispatcher->dispatch('kernel.request', Object(Symfony\Component\HttpKernel\Event\GetResponseEvent))
+#13 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(64): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#14 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(586): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#15 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(563): Silex\Application->handle(Object(Symfony\Component\HttpFoundation\Request))
+#16 /var/www-realspitchee/SILEX_WEB_REST/web/index.php(145): Silex\Application->run()
+#17 {main}
+
+[31/07/2017 13:30] Oops, An exception occurred while executing 'UPDATE SipAccount SET status = ? WHERE id = ?' with params [1, 9040]:
+
+SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock; try restarting transaction
+#0 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php(116): Doctrine\DBAL\Driver\AbstractMySQLDriver->convertException('An exception oc...', Object(Doctrine\DBAL\Driver\PDOException))
+#1 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(996): Doctrine\DBAL\DBALException::driverExceptionDuringQuery(Object(Doctrine\DBAL\Driver\PDOMySql\Driver), Object(Doctrine\DBAL\Driver\PDOException), 'UPDATE SipAccou...', Array)
+#2 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(480): Doctrine\DBAL\Connection->executeUpdate('UPDATE SipAccou...', Array, Array)
+#3 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(366): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->updateTable(Object(Spitchee\Entity\SipAccount), 'SipAccount', Array, NULL)
+#4 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(1069): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->update(Object(Spitchee\Entity\SipAccount))
+#5 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(384): Doctrine\ORM\UnitOfWork->executeUpdates(Object(Doctrine\ORM\Mapping\ClassMetadata))
+#6 /var/www-realspitchee/SILEX_WEB_REST/vendor/doctrine/orm/lib/Doctrine/ORM/EntityManager.php(356): Doctrine\ORM\UnitOfWork->commit(NULL)
+#7 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Service/Generic/BaseEntityService.php(13): Doctrine\ORM\EntityManager->flush()
+#8 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Service/Entity/NamiEventService.php(26): Spitchee\Service\Generic\BaseEntityService->flush()
+#9 /var/www-realspitchee/SILEX_WEB_REST/src/Spitchee/Controller/NamiController.php(30): Spitchee\Service\Entity\NamiEventService->handleNewEvent(Array)
+#10 [internal function]: Spitchee\Controller\NamiController->registerEventAction(Object(Container))
+#11 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(144): call_user_func_array(Array, Array)
+#12 /var/www-realspitchee/SILEX_WEB_REST/vendor/symfony/http-kernel/HttpKernel.php(64): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#13 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(586): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#14 /var/www-realspitchee/SILEX_WEB_REST/vendor/silex/silex/src/Silex/Application.php(563): Silex\Application->handle(Object(Symfony\Component\HttpFoundation\Request))
+#15 /var/www-realspitchee/SILEX_WEB_REST/web/index.php(145): Silex\Application->run()
+#16 {main}
+

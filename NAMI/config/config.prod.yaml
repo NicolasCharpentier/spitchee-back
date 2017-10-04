@@ -1,0 +1,9 @@
+nami:
+  debugLog: 0
+  asterisk:
+    host: 127.0.0.1
+    port: 5038
+    username: admin
+    secret: tlp
+
+silex: 127.0.0.1

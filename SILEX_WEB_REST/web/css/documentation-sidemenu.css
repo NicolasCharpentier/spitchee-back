@@ -1,0 +1,28 @@
+#sidebar-menu ul, ul.sub-menu {
+    list-style-type: none;
+    padding: 0;
+}
+
+#sidebar-menu .main-menu a {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: #999;
+    padding: 4px 20px;
+}
+#sidebar-menu .main-menu a:hover, #sidebar-menu .main-menu a.hovered {
+    //color: #11427D;
+    color: #f5acbb;
+    text-decoration: none;
+    background-color: transparent;
+    //border-left: 1px solid #11427D;
+    border-left: 1px solid #f5acbb;
+}
+
+#sidebar-menu .sub-menu a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 30px;
+    font-size: 12px;
+    font-weight: 400;
+}

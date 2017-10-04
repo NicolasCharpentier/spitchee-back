@@ -1,0 +1,20 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+require 'json'
+require 'yaml'
+
+configFile = File.expand_path("./config.yaml")
+require_relative 'setup.rb'
+
+Vagrant.configure(2) do |config|
+
+  Build.configure(config, YAML::load(File.read(configFile)))
+
+  #nouveau
+    #config.ssh.username = 'root'
+    #config.ssh.password = 'vagrant'
+    #config.ssh.insert_key = 'true'
+  config.vm.provision "shell", path: "../scripts/init_apache.php.sh"
+
+end

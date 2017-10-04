@@ -1,0 +1,30 @@
+---
+ip: "10.0.0.42"
+memory: 1024
+cpus: 2
+
+networking:
+    - public: true
+
+folders:
+    - map: "/Users/Nico/projets/spitchee/backoffice/real/SILEX_WEB_REST"
+      to: /var/www/SILEX_WEB_REST
+      type: nfs
+    - map: "/Users/Nico/projets/spitchee/backoffice/real/COMMON_DEPLOYMENT/scripts"
+      to: /scripts
+      type: nfs
+    #- map: "/Users/Nico/projets/spitchee/backoffice/beta/solid_tests/NAMI"
+    #  to: /spitchee/NAMI
+    #  type: nfs
+
+# PHP options: 5 (uses 5.6) or 7
+php: 7
+
+# Uses nginx + PHP-FPM. If set to false, uses Apache.
+nginx: false
+
+# ports:
+#     - guest: 80
+#       host: 8000
+
+

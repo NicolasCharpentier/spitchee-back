@@ -1,0 +1,25 @@
+name: spitcheeAPI
+
+iptables:
+  on: 1
+  secret: baljan
+
+db:
+  host: localhost
+  port: 3036
+  dbname: api
+  user: root
+  password: ous
+
+services:
+  su: 127.0.0.1:3001
+  nami: 127.0.0.1:3002
+
+rabbit:
+  host: localhost
+  port: 5672
+  user: toubabmechant
+  password: tls
+
+asterisk:
+  logsRoute: /asterisk/logs

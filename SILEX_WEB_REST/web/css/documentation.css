@@ -1,0 +1,49 @@
+.doc-panel {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #eee;
+    border-image: none;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px 1px 1px 5px;
+    margin-bottom: 5px;
+    padding: 20px;
+}
+
+.doc-panel-POST {
+    //border-left-color: #428bca;
+    border-left-color: #94a6ea;
+}
+
+.doc-panel-PUT {
+    border-left-color: lightcoral;
+}
+
+.doc-panel-GET {
+    //border-left-color: #54915F;
+    border-left-color: #5caf87;
+}
+
+.doc-panel-DELETE {
+    border-left-color: lightcoral;
+}
+
+.doc-color-POST {
+    //color: #428bca;
+    color: #94a6ea;
+}
+
+.doc-color-PUT {
+    color: lightcoral;
+}
+
+.doc-color-GET {
+    //color: #54915F;
+    color: #5caf87;
+}
+
+.doc-color-DELETE {
+    color: lightcoral;
+}
