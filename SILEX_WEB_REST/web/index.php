@@ -113,7 +113,10 @@ $app->error(function (\Exception $e, $code) use ($app) {
             return;
         }
 
-        $errorMessage = 'Oops, ' . $e->getMessage() . PHP_EOL . $e->getTraceAsString();
+        $errorMessage = 'Oops, ' . $e->getMessage()
+            . PHP_EOL . $e->getFile() . ' : ' . $e->getLine()
+            . PHP_EOL . $e->getTraceAsString();
+
 
         $app->getLogger()->addError($errorMessage);
 
