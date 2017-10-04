@@ -386,7 +386,7 @@
 
                                         {% if route.details is defined %}
                                             {% if route.details is not iterable %}
-                                                {% set route['details'] = [route.details] %}
+                                                {% set route['details'] = [route['details']] %}
                                             {% endif %}
                                             {% for detail in route.details %}
                                                 <p style="font-size: 16px; font-style: italic;">
