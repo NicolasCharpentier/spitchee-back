@@ -7,7 +7,7 @@ require_once $appPath .  '/vendor/autoload.php';
 use Silex\Application;
 
 $app = new Application;
-$app->register(new DerAlex\Silex\YamlConfigServiceProvider($appPath . '/app/parameters.yml'));
+$app->register(new DerAlex\Silex\YamlConfigServiceProvider($appPath . '/app/parameters.prod.yml'));
 
 $preLogin = 'root';
 $prePwd = 'root';
