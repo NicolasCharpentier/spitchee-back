@@ -385,16 +385,16 @@
                                         <br/>
 
                                         {% if route.details is defined %}
-                                            {% set details = [] %}
+                                            {% set _details = [] %}
                                             {% if route.details is not iterable %}
-                                                {% set details = [route.details] %}
+                                                {% set _details = [route.details] %}
                                             {% else %}
-                                                {% set details = route.details %}
+                                                {% set _details = route.details %}
                                             {% endif %}
-                                            {% for detail in details %}
+                                            {% for _detail in _details %}
                                                 <p style="font-size: 16px; font-style: italic;">
                                                     <span class="glyphicon glyphicon-chevron-right doc-color-{{ route.method }}"></span>
-                                                    {{ detail }}
+                                                    {{ _detail }}
                                                 </p>
                                             {% endfor %}
                                         {% endif %}
