@@ -2,11 +2,13 @@
     Options -MultiViews
 
     RewriteEngine On
+    RewriteCond %{THE_REQUEST} !/phpmyadmin [NC]
     RewriteCond %{HTTP:Authorization} ^(.+)$
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
-    #RewriteBase /web
+    RewriteBase /web
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^ index.php [QSA,L]
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.+)$ /index.php/$1 [L,QSA]
 </IfModule>
 
 <FilesMatch "\.(ttf|otf|eot|woff)$">
