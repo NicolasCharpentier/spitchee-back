@@ -385,10 +385,13 @@
                                         <br/>
 
                                         {% if route.details is defined %}
+                                            {% set details = [] %}
                                             {% if route.details is not iterable %}
-                                                {% set route['details'] = {0: route['details']} %}
+                                                {% set details = [route.details] %}
+                                            {% else %}
+                                                {% set details = route.details %}
                                             {% endif %}
-                                            {% for detail in route.details %}
+                                            {% for detail in details %}
                                                 <p style="font-size: 16px; font-style: italic;">
                                                     <span class="glyphicon glyphicon-chevron-right doc-color-{{ route.method }}"></span>
                                                     {{ detail }}
