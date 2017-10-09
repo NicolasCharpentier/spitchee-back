@@ -1002,7 +1002,7 @@
     }
 
     var routeCategories = JSON.parse(
-            String(/ {{ documentation.actions.routeCategories|json_encode|raw }} /).substring(1).slice(0, -1)
+            String(/{{ documentation.actions.routeCategories|json_encode|raw }} /).substring(1).slice(0, -1)
     );
 
     var rabbitCategories = JSON.parse(
