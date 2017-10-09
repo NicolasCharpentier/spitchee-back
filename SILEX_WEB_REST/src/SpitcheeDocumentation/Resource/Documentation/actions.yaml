@@ -67,7 +67,7 @@ actions:
               json:
                 - name: conferenceId
                   required: false
-                  description: Id optionnel de conférence. Ne peut contenir que des lettres et chiffres. Sera mis en majuscule et espaces supprimés par le serveur. Si absent, l id sera auto-généré.
+                  description: REPLACED_EN_JS
             success:
               code: 201
               content:
