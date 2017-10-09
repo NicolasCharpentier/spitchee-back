@@ -67,7 +67,7 @@ actions:
               json:
                 - name: conferenceId
                   required: false
-                  description: REPLACED_EN_JS
+                  description: REPLACED_IN_TWIG
             success:
               code: 201
               content:

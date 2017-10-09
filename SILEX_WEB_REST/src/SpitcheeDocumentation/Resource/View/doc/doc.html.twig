@@ -448,7 +448,15 @@
                                                     <tr>
                                                         <td> {{ arg.name }} </td>
                                                         <td> {{ arg.required ? 'Oui' : 'Non' }}</td>
-                                                        <td> {{ arg.description is defined ? arg.description : '' }} </td>
+                                                        <td>
+                                                            {% if arg.description is defined %}
+                                                                {% if arg.description == "REPLACED_IN_TWIG" %}
+                                                                    Id optionnel de conférence. Ne peut contenir que des lettres et chiffres. Sera mis en majuscule et espaces supprimés par le serveur. Si absent, l id sera auto-généré.
+                                                                {% else %}
+                                                                    arg.description
+                                                                {% endif %}
+                                                            {% endif %}
+                                                        </td>
                                                     </tr>
                                                 {% endfor %}
                                                 </tbody>
