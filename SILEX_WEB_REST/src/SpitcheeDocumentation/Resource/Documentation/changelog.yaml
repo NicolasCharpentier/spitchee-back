@@ -6,6 +6,7 @@ changelogs:
     date: 09/10/17
     done:
       - La route %createconf% accepte maintenant un paramètre facultatif pour demander un id précis de conférence.
+      - Les conférences et utilisateurs présents ont été purgés
   - version: 0.2.2
     name: Karen
     date: 04/09/16

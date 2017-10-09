@@ -1039,11 +1039,9 @@
                         '<span style="color: {{ corail }}" class="fa fa-exclamation-triangle"> </span> '
                 );
 
-                console.log('Va test sur', content);
                 var matches = content.match(/%.*?%/g);
                 if (matches !== null) {
                     $.each(matches, function (osef, val) {
-                        console.log('Match ', val);
                         var war = val.split('%')[1];
                         content = content.replace(
                                 val, '<a onclick="scrollToRoute(\'' + war + '\')">' + war + '</a>'
