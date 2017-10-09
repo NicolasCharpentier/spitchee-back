@@ -15,10 +15,12 @@ class ConferenceService extends BaseEntityService
 {
     public function createActiveConference(User $confMaster, User $speaker, $wantedId, $save = true)
     {
-        $errorOnWantedId = $this->getErrorOnWantedId($wantedId);
+        if ($wantedId) {
+            $errorOnWantedId = $this->getErrorOnWantedId($wantedId);
 
-        if ($errorOnWantedId) {
-            return $errorOnWantedId;
+            if ($errorOnWantedId) {
+                return $errorOnWantedId;
+            }
         }
 
         $conferenceId = $wantedId ?: $this->generateConferneceId();
