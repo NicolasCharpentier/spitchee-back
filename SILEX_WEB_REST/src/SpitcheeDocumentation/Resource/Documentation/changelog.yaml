@@ -3,7 +3,7 @@
 changelogs:
   - version: 0.2.3
     name: Amour
-    date: 09/10/2017
+    date: 09/10/17
     done:
       - La route %createconf% accepte maintenant un paramètre facultatif pour demander un id précis de conférence.
   - version: 0.2.2
