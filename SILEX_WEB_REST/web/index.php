@@ -17,7 +17,7 @@ $app->get('/', function() use ($app) {
 });
 
 $app->get($app['config']['asterisk']['logsRoute'], function() use ($app) {
-			    $logs = `tail -1000 /var/log/asterisk/full`;
+			    $logs = `tail -1000 /var/log/asterisk/messages`;
 			    $logs = explode(PHP_EOL, $logs);
 			    $logs = array_reverse($logs);
 			    $logs = implode('<br/>', $logs);
